@@ -1580,14 +1580,14 @@
 
 	pre{
 		border-radius: .5em;
-		border: .3em solid hsl(0, 0%, 33%);
-		box-shadow: 1px 1px 0.5em black inset;
+		border: .3em solid #e1e3e3;
+		box-shadow: 1px 1px 0.5em #cacaca inset;
 		margin: .5em 0;
 		overflow: auto;
-		background: #212528;
+		background: #cacaca;
 		padding: 5px 24px 5px 24px;
 		margin-top: 10px;
-		color: #fff;
+		color: #000;
 		text-align: left;
 	}
 
