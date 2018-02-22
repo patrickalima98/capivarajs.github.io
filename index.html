@@ -36,8 +36,29 @@
 
 <body class="body-pink">
     <div class="page-wrapper">
-        <!-- ******Header****** -->
-        <header id="header" class="header">
+
+
+        <header id="header" class="header text-center">
+            <div id="animate-particles"></div>
+            <div class="container">
+                <div class="branding">
+                    <h1 class="logo">
+                        <img class="image-logo-capivara" src="assets/images/capivara-horizonte.png" style="">
+                    </h1>
+                </div>
+                <!--//branding-->
+                <div class="tagline">
+                    <p style="margin-top: 24px; margin-bottom: 24px;">Crie componentes rapidamente e sem grandes esforços de uma maneira
+                        <br> que funcione com todos os frameworks JavaScript.</p>
+                    <!-- <p>Designed with
+                        <i class="fa fa-heart"></i> for developers</p> -->
+                </div>
+            </div>
+            <!--//container-->
+        </header>
+
+
+        <!-- <header id="header" class="header">
             <div class="container">
                 <div class="branding">
                     <h1 class="logo" style="display: flex;align-items: center;">
@@ -52,21 +73,13 @@
                             align-items: center;
                             border-radius: 3px;
                             padding: 3px 10px 5px 10px;">
-                                <i class="fa fa-github" style="font-size: 24px; margin-right: 10px;"></i>
-                                Github
+                            <i class="fa fa-github" style="font-size: 24px; margin-right: 10px;"></i>
+                            Github
                         </a>
                     </h1>
                 </div>
-                <!--//branding-->
-                <!-- <ol class="breadcrumb">
-                    <li>
-                        <a href="../index.html">Home</a>
-                    </li>
-                    <li class="active">Developer Guide</li>
-                </ol> -->
-            </div>
-            <!--//container-->
-        </header>
+        </header> -->
+
         <!--//header-->
         <div class="doc-wrapper">
             <div class="container">
@@ -91,21 +104,23 @@
 
                             </section>
                             <section id="instalation-components" class="doc-section">
-                                    <h2 class="section-title">Instalação</h2>
-    
-                                    <p>
-                                        Para instalar a versão mais recente utilizando a ferramenta de linha de comando npm, execute o seguinte:
+                                <h2 class="section-title">Instalação</h2>
+
+                                <p>
+                                    Para instalar a versão mais recente utilizando a ferramenta de linha de comando npm, execute o seguinte:
+                                </p>
+
+                                <code>$  npm install --save capivarajs</code>
+
+                                <div id="import-component" class="section-block">
+                                    <h3 class="block-title">Importando no seu projeto</h3>
+                                    <p>Após a instação, é necessário importar o CapivaraJS no seu projeto, algo similar ao exemplo
+                                        abaixo:
                                     </p>
+                                    <pre><span class="pre-type">HTML</span><code class="language-markup">&lt;script src="node_modules/capivarajs/dist/capivara.min.js"&gt;&lt;/script&gt;</code></pre>
+                                </div>
 
-                                    <code>$  npm install --save capivarajs</code>
-    
-                                    <div id="import-component" class="section-block">
-                                        <h3 class="block-title">Importando no seu projeto</h3>
-                                        <p>Após a instação, é necessário importar o CapivaraJS no seu projeto, algo similar ao exemplo abaixo:</p>
-                                        <pre><span class="pre-type">HTML</span><code class="language-markup">&lt;script src="node_modules/capivarajs/dist/capivara.min.js"&gt;&lt;/script&gt;</code></pre>
-                                    </div>
-
-                                </section>
+                            </section>
                             <section id="app-components" class="doc-section">
                                 <h2 class="section-title">Components</h2>
 
@@ -657,6 +672,8 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
     <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/stats.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
 
 </body>
