@@ -358,6 +358,32 @@ capivara.componentBuilder('meuMarcador')
                                         <p>Perceba que no exemplo acima usamos a diretiva
                                             <b>cp-model</b> a documentação dela será vista depois.</p>
                                 </div>
+
+                                <div id="interpolation-component" class="section-block">
+                                    <h3 class="block-title">Interpolação</h3>
+                                    <p>A interpolação é usada pelo CapivaraJS para fornecer vinculação de dados para os elementos
+                                        HTML.
+                                    </p>
+                                    <br>
+                                    <p>Para compreendermos a interpolação, vamos criar um exemplo onde será apresentado em um
+                                        elemento
+                                        <b>h1</b> a soma de dois números do nosso escopo.</p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;h1&gt;Soma: [[ numero1 + numero2 ]]&lt;/h1&gt;
+    `,
+    controller: function(scope){
+        scope.numero1 = 10;
+        scope.numero2 = 15;
+    }
+});</code></pre>
+                                    <br> O resultado final seria:
+                                    <br>
+                                    <div class="result-demo">
+                                        <h1>Soma: 25</h1>
+                                    </div>
+                                </div>
+
                             </section>
 
                             <section id="functions-capivara" class="doc-section">
@@ -517,6 +543,81 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
                             </section>
 
+                            <section id="directives-capivara" class="doc-section">
+                                <h2 class="section-title">Diretivas</h2>
+                                <div id="cp-click-component" class="section-block">
+                                    <h3 class="block-title">cp-click</h3>
+                                    <p>
+                                        Você pode executar uma função do seu escopo. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `        
+        &lt;button cp-click="minhaFuncao()"&gt;Clique-me&lt;/button&gt;
+    `,
+    controller: function(scope){
+
+        scope.minhaFuncao = function(){
+            console.log('Minha função foi executada.');
+        };
+
+    }
+});</code></pre>
+                                </div>
+                                <div id="cp-model-component" class="section-block">
+                                    <h3 class="block-title">cp-model</h3>
+                                    <p>
+                                        Essa diretiva possibilita a interação do seu escopo com as input, quando usamos cp-model toda modificação de uma input é
+                                        aplicada no escopo. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `        
+        &lt;input cp-model="pessoa.nome"/&gt;
+
+        &lt;button type="button" cp-click="test()"&gt;Clique-me&lt;/button&gt;
+    `,
+    controller: function(scope){
+
+        scope.pessoa = {
+            nome: 'Mateus'
+        };
+
+        scope.test = function(){
+            console.log(scope.pessoa.nome);
+        };
+
+    }
+});</code></pre>
+                                </div>
+                                <div id="cp-repeat-component" class="section-block">
+                                    <h3 class="block-title">cp-repeat</h3>
+                                    <p>
+                                        O cpRepeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `        
+        &lt;ul&gt;
+            &lt;li cp-repeat="pessoa in pessoas"&gt;
+                [[pessoa.nome]]
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    `,
+    controller: function(scope){
+
+        scope.pessoas = [
+            {
+                nome: 'João'
+            },
+            {
+                nome: 'Maria'
+            }
+        ]
+
+    }
+});</code></pre>
+                                </div>
+                            </section>
+
+
                         </div>
                         <!--//content-inner-->
                     </div>
@@ -552,6 +653,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </li>
                                         <li>
                                             <a class="scrollto" href="#bindings-component">Bindings</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#interpolation-component">Interpolação</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -595,6 +699,20 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </li>
                                         <li>
                                             <a class="scrollto" href="#event-emit-component">Emitir</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#directives-capivara">Diretivas</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li>
+                                            <a class="scrollto" href="#cp-click-component">cp-click</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#cp-model-component">cp-model</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#cp-repeat-component">cp-repeat</a>
                                         </li>
                                     </ul>
                                 </li>
