@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
         rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
@@ -252,25 +252,32 @@ capivara.component('my-component', options)</code></pre>
 
                                 <div id="bindings-component" class="section-block">
                                     <h3 class="block-title">Bindings</h3>
-                                    <p>Os bindings são parâmetros que você informa para um componente, você deve utilizar binding quando quiser que o componente mantenha a referência do parâmetro, em outras palavras toda alteração de valor feita pelo componente será aplicado no seu parâmetro, assim como toda alteração feita no valor do parâmetro será refletido no componente.</p>
+                                    <p>Os bindings são parâmetros que você informa para um componente, você deve utilizar binding
+                                        quando quiser que o componente mantenha a referência do parâmetro, em outras palavras
+                                        toda alteração de valor feita pelo componente será aplicado no seu parâmetro, assim
+                                        como toda alteração feita no valor do parâmetro será refletido no componente.</p>
                                     <p>Para entendermos como funciona os bindings do componente, vamos criar um exemplo onde
-                                        iremos simular um objeto chamado <b>pessoa</b> e nosso componente irá alterar o <b>nome</b> dessa pessoa. <br> <br>
-
-                                    Primeiro, temos que informar o componente que iremos receber um parâmetro do tipo binding chamado
-                                    <b>nome</b>.
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+                                        iremos simular um objeto chamado
+                                        <b>pessoa</b> e nosso componente irá alterar o
+                                        <b>nome</b> dessa pessoa.
+                                        <br>
+                                        <br> Primeiro, temos que informar o componente que iremos receber um parâmetro do tipo
+                                        binding chamado
+                                        <b>nome</b>.
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
             template: '',
             bindings: ['nome']
         })</code></pre>
 
-                                    <p>
-                                        É sempre valido reforçar o fato de que seu código HTML não sofre alterações
-                                    </p>
+                                        <p>
+                                            É sempre valido reforçar o fato de que seu código HTML não sofre alterações
+                                        </p>
 
-                                    <pre><span class="pre-type">HTML</span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
-                                    <p>O componente está preparado para receber nosso parâmetro, precisamos informa-lo na inicialização
-                                        do componente, é necessário informar seu contexto atual, para que o componente possa atualiza-lo quando uma alteração acorrer.</p>
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let pessoa = { nome: 'Mateus' };
+                                        <pre><span class="pre-type">HTML</span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
+                                        <p>O componente está preparado para receber nosso parâmetro, precisamos informa-lo na
+                                            inicialização do componente, é necessário informar seu contexto atual, para que
+                                            o componente possa atualiza-lo quando uma alteração acorrer.</p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">let pessoa = { nome: 'Mateus' };
 
 capivara.componentBuilder('meuMarcador')
         .context(pessoa)
@@ -278,50 +285,175 @@ capivara.componentBuilder('meuMarcador')
             nome: 'nome'
         })
         .build();</code></pre>
-                                    <p>Perceba que quando declaramos nosso binding, colocamos o nome do atributo que está no contexto, fazendo assim que a refêrencia entre os escopos seja criada.</p>
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+                                        <p>Perceba que quando declaramos nosso binding, colocamos o nome do atributo que está
+                                            no contexto, fazendo assim que a refêrencia entre os escopos seja criada.</p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
             template: '&lt;input type="text" cp-model="$bindings.nome"/&gt;',
             bindings: ['nome'],
             controller: function(scope){
             }
         })</code></pre>
-                                    <p>Perceba que no exemplo acima usamos a diretiva
-                                        <b>cp-model</b> a documentação dela será vista depois.</p>
+                                        <p>Perceba que no exemplo acima usamos a diretiva
+                                            <b>cp-model</b> a documentação dela será vista depois.</p>
+                                </div>
+                            </section>
+
+                            <section id="functions-capivara" class="doc-section">
+                                <h2 class="section-title">Funções</h2>
+                                <p>
+                                    Criamos algumas funções que podem facilitar no seu desenvolvimento, abaixo vamos entender cada uma delas.
+                                </p>
+
+                                <div id="is-array-component" class="section-block">
+                                    <h3 class="block-title">capivara.isArray</h3>
+                                    <p>Determina se uma referência é um array, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let pessoas = [{ nome: 'João' }];
+let resultado = capivara.isArray(pessoas);
+
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
                                 </div>
 
-                                <!-- <div id="projects" class="section-block">
-                                    <h3 class="block-title">Projects</h3>
-                                    <p>Intro goes here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-                                        ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                                        montes, nascetur ridiculus mus. Donec quam felis</p>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <h6>Projects Overview</h6>
-                                            <div class="screenshot-holder">
-                                                <a href="assets/images/demo/appkit-projects.jpg" data-title="Project Overview" data-toggle="lightbox">
-                                                    <img class="img-responsive" src="assets/images/demo/appkit-projects-thumb.jpg" alt="screenshot" />
-                                                </a>
-                                                <a class="mask" href="assets/images/demo/appkit-projects.jpg" data-title="Project Overview" data-toggle="lightbox">
-                                                    <i class="icon fa fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            <h6>Project Details</h6>
-                                            <div class="screenshot-holder">
-                                                <a href="assets/images/demo/appkit-project.jpg" data-title="Project Details" data-toggle="lightbox">
-                                                    <img class="img-responsive" src="assets/images/demo/appkit-project-thumb.jpg" alt="screenshot" />
-                                                </a>
-                                                <a class="mask" href="assets/images/demo/appkit-project.jpg" data-title="Project Details" data-toggle="lightbox">
-                                                    <i class="icon fa fa-search-plus"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                <div id="is-object-component" class="section-block">
+                                    <h3 class="block-title">capivara.isObject</h3>
+                                    <p>Determina se uma referência é um objeto, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let pessoa = { nome: 'Maria' };
+let resultado = capivara.isObject(pessoa);
+
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
+                                </div>
+
+                                <div id="is-date-component" class="section-block">
+                                    <h3 class="block-title">capivara.isDate</h3>
+                                    <p>Determina se uma referência é uma data, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let pessoa = { 
+    nome: 'Maria', 
+    aniversario: new Date('1996-11-13T23:00:00Z') 
+};
+
+let resultado = capivara.isDate(pessoa.aniversario);
+    
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
+                                </div>
+
+                                <div id="is-element-component" class="section-block">
+                                    <h3 class="block-title">capivara.isElement</h3>
+                                    <p>Determina se uma referência é um NodeElement, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let resultado = capivara.isElement(document.body);
+        
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
+                                </div>
+
+                                <div id="is-function-component" class="section-block">
+                                    <h3 class="block-title">capivara.isFunction</h3>
+                                    <p>Determina se uma referência é uma função, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let minhaFuncao = function(){ 
+    //code 
+};
+
+let resultado = capivara.isFunction(minhaFuncao);
+            
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
+                                </div>
+
+                                <div id="is-number-component" class="section-block">
+                                    <h3 class="block-title">capivara.isNumber</h3>
+                                    <p>Determina se uma referência é um número, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let notaDoCapivara = 10;
+
+let resultado = capivara.isNumber(notaDoCapivara);
+
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
+                                </div>
+
+                                <div id="is-string-component" class="section-block">
+                                    <h3 class="block-title">capivara.isString</h3>
+                                    <p>Determina se uma referência é uma string, informe o valor a ser verificado por parâmetro.
+                                        Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let nome = 'CapivaraJS';
+
+let resultado = capivara.isString(nome);
+
+console.log(resultado); // O resultado deve ser TRUE.</code></pre>
+                                </div>
+
+                                <div id="merge-component" class="section-block">
+                                    <h3 class="block-title">capivara.merge</h3>
+                                    <p>Faça a mesclagem de objetos em um único objeto. informe os parâmetros que serão mesclados
+                                        como no exemplo abaixo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let obj1 = {
+    nome: 'Maria'
+};
+
+let obj2 = {
+    idade: 25
+};
+    
+let resultado = capivara.merge(obj1, obj2);
+    
+console.log(resultado); // O resultado deve ser {nome: "Maria", idade: 25}.</code></pre>
+                                </div>
+
+                                <div id="copy-component" class="section-block">
+                                    <h3 class="block-title">capivara.copy</h3>
+                                    <p>Você pode fazer a cópia de um objeto para que seja criado uma nova referência. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let obj = {
+    nome: 'Maria'
+};
+
+let resultado = capivara.copy(obj);
+
+console.log(resultado); 
+
+// O resultado deve ser um objeto idêntico, entretanto com outra referência: {nome: 'Maria'}.</code></pre>
+                                </div>
+
 
                             </section>
-                            <!--//doc-section-->
+
+                            <section id="events-capivara" class="doc-section">
+                                <h2 class="section-title">Eventos</h2>
+                                <p>
+                                    É possível escutar e emitir eventos, o CapivaraJS te entrega as funções
+                                    <b>$on</b> e
+                                    <b>$emit</b>.
+                                </p>
+
+                                <div id="event-on-component" class="section-block">
+                                    <h3 class="block-title">capivara.$on</h3>
+                                    <p>Para começar a escutar um evento, basta informar seu nome e uma função para ser executada
+                                        quando seu evento for emitido.
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.$on('meuEvento', function(){
+    console.log('Uhaau! Meu evento foi executado');
+});</code></pre>
+                                </div>
+
+                                <div id="event-emit-component" class="section-block">
+                                    <h3 class="block-title">capivara.$emit</h3>
+                                    <p>A função $emit faz com que todos os ouvintes do seu evento seja executado. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.$emit('meuEvento');</code></pre>
+                                    Você pode enviar vários parâmetros no seu evento, para isso basta informa-los ao emitir um evento, logo após do seu nome.
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let meuParametro = 'CapivaraJS'; 
+capivara.$emit('meuEvento', meuParametro);</code></pre>
+                                </div>
+
+                            </section>
 
                         </div>
                         <!--//content-inner-->
@@ -330,9 +462,6 @@ capivara.componentBuilder('meuMarcador')
                     <div class="doc-sidebar">
                         <nav id="doc-nav">
                             <ul id="doc-menu" class="nav doc-menu hidden-xs" data-spy="affix">
-                                <!-- <li>
-                                    <a class="scrollto" href="#usingComponents">Criando Componentes</a>
-                                </li> -->
                                 <li>
                                     <a class="scrollto" href="#app-components">Componentes</a>
                                     <ul class="nav doc-sub-menu">
@@ -349,10 +478,52 @@ capivara.componentBuilder('meuMarcador')
                                             <a class="scrollto" href="#functions-component">Funções</a>
                                         </li>
                                         <li>
-                                                <a class="scrollto" href="#bindings-component">Bindings</a>
+                                            <a class="scrollto" href="#bindings-component">Bindings</a>
                                         </li>
                                     </ul>
-                                    <!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#functions-capivara">Funções</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li>
+                                            <a class="scrollto" href="#is-array-component">isArray</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#is-object-component">isObject</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#is-date-component">isDate</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#is-element-component">isElement</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#is-function-component">isFunction</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#is-number-component">isNumber</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#is-string-component">isString</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#merge-component">merge</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#copy-component">copy</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#events-capivara">Eventos</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li>
+                                            <a class="scrollto" href="#event-on-component">Escutar</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#event-emit-component">Emitir</a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                             <!--//doc-menu-->
@@ -370,8 +541,8 @@ capivara.componentBuilder('meuMarcador')
             <div class="container">
                 <div class="promo-block-inner">
                     <h3 class="promo-title text-center">
-                        <i class="fa fa-heart"></i>
-                        <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS - Feito para Comunidade</a>
+                        <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS
+                            <i class="fa fa-heart"></i> Open Source</a>
                     </h3>
                     <div class="row">
                         <div class="figure-holder col-md-5 col-sm-6 col-xs-12">
@@ -390,10 +561,8 @@ capivara.componentBuilder('meuMarcador')
                                     </h4>
                                     <p>Você pode ser um dos colaboradores dessa grande iniciativa.
                                         <br>
-                                        <br> CapivaraJS é Open Source e foi feito pra comunidade.
                                         <br> Crie ou resolva issues, faça melhorias ou correções.
                                         <br> Suas contribuições serão bem vistas por nós.
-                                        <i class="fa fa-heart"></i>
                                     </p>
                                     <a class="btn btn-cta" href="https://github.com/CapivaraJS/capivarajs" target="_blank">
                                         <i class="fa fa-github"></i>
