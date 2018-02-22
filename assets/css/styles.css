@@ -332,7 +332,7 @@ select {
 }
 /* ====== Header ====== */
 .header {
-  background: #494d55;
+  background: #282828;
   color: rgba(255, 255, 255, 0.85);
   border-top: 5px solid #40babd;
   padding: 30px 0;
