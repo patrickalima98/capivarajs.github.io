@@ -510,6 +510,17 @@ console.log(resultado);
 // O resultado deve ser um objeto idêntico, entretanto com outra referência: {nome: 'Maria'}.</code></pre>
                                 </div>
 
+                                <div id="replace-all-component" class="section-block">
+                                    <h3 class="block-title">capivara.replaceAll</h3>
+                                    <p>Você pode fazer o replace em uma String de todas as ocorrências encontradas. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">let str = 'Eu amo capivara. Capivara é demais.';
+let resultado = capivara.replaceAll(str, 'capivara', 'CapivaraJS');
+
+console.log(resultado); 
+
+// O resultado deve ser: Eu amo CapivaraJS. Capivara é demais.</code></pre>
+                                </div>
 
                             </section>
 
@@ -615,6 +626,28 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-show-component" class="section-block">
+                                    <h3 class="block-title">cp-show</h3>
+                                    <p>
+                                        O cpshow te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `        
+        &lt;h1 cp-show="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
+
+        &lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
+    `,
+    controller: function(scope){
+
+        scope.mostrarTexto = false;
+
+        scope.alterar = function(){
+            scope.mostrarTexto = true;
+        }
+
+    }
+});</code></pre>
+                                </div>
                             </section>
 
 
@@ -714,6 +747,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <li>
                                             <a class="scrollto" href="#cp-repeat-component">cp-repeat</a>
                                         </li>
+                                        <li>
+                                            <a class="scrollto" href="#cp-show-component">cp-show</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -801,6 +837,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     <script src="assets/js/particles.min.js"></script>
     <script src="assets/js/stats.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
+    <script async src="https://unpkg.com/capivarajs@latest/dist/capivara.min.js"></script>
 
 </body>
 
