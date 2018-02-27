@@ -629,7 +629,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-show-component" class="section-block">
                                     <h3 class="block-title">cp-show</h3>
                                     <p>
-                                        O cpshow te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
+                                        O cpShow te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
                                     </p>
                                     <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `        
@@ -643,6 +643,28 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
         scope.alterar = function(){
             scope.mostrarTexto = true;
+        }
+
+    }
+});</code></pre>
+                                </div>
+                                <div id="cp-if-component" class="section-block">
+                                    <h3 class="block-title">cp-if</h3>
+                                    <p>
+                                        O cpIf te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do ngShow os elementos são removidos do documento e contruidos dinamicamente. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `        
+        &lt;h1 cp-if="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
+
+        &lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
+    `,
+    controller: function(scope){
+
+        scope.mostrarTexto = false;
+
+        scope.alterar = function(){
+            scope.mostrarTexto = !scope.mostrarTexto;
         }
 
     }
@@ -753,6 +775,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <li>
                                             <a class="scrollto" href="#cp-show-component">cp-show</a>
                                         </li>
+                                        <li>
+                                            <a class="scrollto" href="#cp-if-component">cp-if</a>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -845,11 +870,11 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99987123-4"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'UA-99987123-4');
+        gtag('config', 'UA-99987123-4');
     </script>
 
 
