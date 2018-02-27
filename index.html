@@ -573,14 +573,54 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
     }
 });</code></pre>
-                                </div>
-                                <div id="cp-model-component" class="section-block">
-                                    <h3 class="block-title">cp-model</h3>
-                                    <p>
-                                        Essa diretiva possibilita a interação do seu escopo com as input, quando usamos cp-model toda modificação de uma input é
-                                        aplicada no escopo. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+                                    <div id="cp-if-component" class="section-block">
+                                        <h3 class="block-title">cp-if</h3>
+                                        <p>
+                                            O cpIf te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do ngShow os elementos são removidos
+                                            do documento e contruidos dinamicamente. Exemplo:
+                                        </p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+template: `        
+&lt;h1 cp-if="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
+
+&lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
+`,
+controller: function(scope){
+
+scope.mostrarTexto = false;
+
+scope.alterar = function(){
+scope.mostrarTexto = !scope.mostrarTexto;
+}
+
+}
+});</code></pre>
+                                    </div>
+                                    <div id="cp-init-component" class="section-block">
+                                        <h3 class="block-title">cp-init</h3>
+                                        <p>
+                                            O cpInit permite a execução de uma função quando um determinado elemento for renderizado. Exemplo:
+                                        </p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+template: `        
+&lt;h1 cp-init="inicializa('Esse é um exemplo')"&gt;String de teste&lt;/h1&gt;
+`,
+controller: function(scope){
+
+scope.inicializa = function( value ){
+console.log("iniciou", value);
+}
+
+}
+});</code></pre>
+                                    </div>
+                                    <div id="cp-model-component" class="section-block">
+                                        <h3 class="block-title">cp-model</h3>
+                                        <p>
+                                            Essa diretiva possibilita a interação do seu escopo com as input, quando usamos cp-model toda modificação de uma input é
+                                            aplicada no escopo. Exemplo:
+                                        </p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `        
         &lt;input cp-model="pessoa.nome"/&gt;
 
@@ -598,13 +638,13 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
     }
 });</code></pre>
-                                </div>
-                                <div id="cp-repeat-component" class="section-block">
-                                    <h3 class="block-title">cp-repeat</h3>
-                                    <p>
-                                        O cpRepeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+                                    </div>
+                                    <div id="cp-repeat-component" class="section-block">
+                                        <h3 class="block-title">cp-repeat</h3>
+                                        <p>
+                                            O cpRepeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
+                                        </p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `        
         &lt;ul&gt;
             &lt;li cp-repeat="pessoa in pessoas"&gt;
@@ -625,13 +665,13 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
     }
 });</code></pre>
-                                </div>
-                                <div id="cp-show-component" class="section-block">
-                                    <h3 class="block-title">cp-show</h3>
-                                    <p>
-                                        O cpShow te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+                                    </div>
+                                    <div id="cp-show-component" class="section-block">
+                                        <h3 class="block-title">cp-show</h3>
+                                        <p>
+                                            O cpShow te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
+                                        </p>
+                                        <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `        
         &lt;h1 cp-show="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
 
@@ -647,28 +687,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
     }
 });</code></pre>
-                                </div>
-                                <div id="cp-if-component" class="section-block">
-                                    <h3 class="block-title">cp-if</h3>
-                                    <p>
-                                        O cpIf te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do ngShow os elementos são removidos do documento e contruidos dinamicamente. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
-    template: `        
-        &lt;h1 cp-if="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
-
-        &lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
-    `,
-    controller: function(scope){
-
-        scope.mostrarTexto = false;
-
-        scope.alterar = function(){
-            scope.mostrarTexto = !scope.mostrarTexto;
-        }
-
-    }
-});</code></pre>
+                                    </div>
                                 </div>
                             </section>
 
@@ -767,6 +786,12 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                             <a class="scrollto" href="#cp-click-component">cp-click</a>
                                         </li>
                                         <li>
+                                            <a class="scrollto" href="#cp-if-component">cp-if</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#cp-init-component">cp-init</a>
+                                        </li>
+                                        <li>
                                             <a class="scrollto" href="#cp-model-component">cp-model</a>
                                         </li>
                                         <li>
@@ -774,9 +799,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </li>
                                         <li>
                                             <a class="scrollto" href="#cp-show-component">cp-show</a>
-                                        </li>
-                                        <li>
-                                            <a class="scrollto" href="#cp-if-component">cp-if</a>
                                         </li>
                                     </ul>
                                 </li>
