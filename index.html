@@ -664,16 +664,16 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                             renderizado. Exemplo:
                                         </p>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
-template: `
-&lt;h1 cp-init="inicializa('Esse é um exemplo')"&gt;String de teste&lt;/h1&gt;
-`,
-controller: function(scope){
+    template: `
+        &lt;h1 cp-init="inicializa('Esse é um exemplo')"&gt;String de teste&lt;/h1&gt;
+    `,
+    controller: function(scope){
 
-scope.inicializa = function( value ){
-console.log("iniciou", value);
-}
+        scope.inicializa = function( value ){
+            console.log("iniciou", value);
+        }
 
-}
+    }
 });</code></pre>
                                     </div>
                                     <div id="cp-model-component" class="section-block">
