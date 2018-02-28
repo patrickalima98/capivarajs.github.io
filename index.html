@@ -137,6 +137,29 @@
                             </div>
 
                         </section>
+                        <section id="cli-component" class="doc-section">
+                            <h2 class="section-title">CLI</h2> <br>
+                            CapivaraJS fornece uma CLI oficial para que criação dos seus componentes sejam rápidas. 
+                            Os comandos levam apenas alguns minutos para serem executados.
+                            <br> <br>
+                            Para criar seu primeiro componente usando o CLI, siga as intruções abaixo: <br> <br>
+
+                            # Instale capivara-cli <br>
+                            <code>
+                                $ npm install -g capivara-cli
+                            </code>
+                            <br><br>
+                            # Crie um novo componente<br>
+                            <code>
+                                $ capivara init my-component
+                            </code>
+                            <br><br>
+                            # Agora é so executar. Perceba que o CLI adiciona o prefixo <b>capivara</b> no componente. <br>
+                            <code>
+                                $ cd capivara-my-component <br>
+                                $ npm run dev
+                            </code>
+                        </section>
                         <section id="app-components" class="doc-section">
                             <h2 class="section-title">Components</h2>
 
@@ -280,10 +303,11 @@ capivara.component('my-component', options)</code></pre>
                                 <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: '&lt;div&gt;&lt;/div&gt;',
     constants: ['titulo'],
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.$onInit = function(){
-            console.log(scope.$constants.titulo);
+        $ctrl.$onInit = function(){
+            console.log($ctrl.$constants.titulo);
         }
 
     }
@@ -327,7 +351,8 @@ capivara.component('my-component', options)</code></pre>
                                 <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
         template: '&lt;button type="button" cp-click="$functions.onClickButton()"&gt;Clique-me&lt;/button&gt;',
         functions: ['onClickButton'],
-        controller: function(scope){
+        controller: function(){
+            const $ctrl = this;
         }
     })</code></pre>
                                 <p>Perceba que no exemplo acima usamos a diretiva
@@ -377,7 +402,8 @@ capivara.componentBuilder('meuMarcador')
                                 <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
             template: '&lt;input type="text" cp-model="$bindings.nome"/&gt;',
             bindings: ['nome'],
-            controller: function(scope){
+            controller: function(){
+                const $ctrl = this;
             }
         })</code></pre>
                                 <p>Perceba que no exemplo acima usamos a diretiva
@@ -397,11 +423,13 @@ capivara.componentBuilder('meuMarcador')
                                     <b>h1</b> a soma de dois números do nosso escopo.</p>
                                 <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;h1&gt;Soma: [[ numero1 + numero2 ]]&lt;/h1&gt;
+        &lt;h1&gt;Soma: [[ $ctrl.numero1 + $ctrl.numero2 ]]&lt;/h1&gt;
     `,
-    controller: function(scope){
-        scope.numero1 = 10;
-        scope.numero2 = 15;
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.numero1 = 10;
+        $ctrl.numero2 = 15;
     }
 });</code></pre>
                                 <br> O resultado final seria:
@@ -602,11 +630,12 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 </p>
                                 <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;button cp-click="minhaFuncao()"&gt;Clique-me&lt;/button&gt;
+        &lt;button cp-click="$ctrl.minhaFuncao()"&gt;Clique-me&lt;/button&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.minhaFuncao = function(){
+        $ctrl.minhaFuncao = function(){
             console.log('Minha função foi executada.');
         };
 
@@ -621,16 +650,17 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     </p>
                                     <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;h1 cp-if="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
+        &lt;h1 cp-if="$ctrl.mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
 
-        &lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
+        &lt;button cp-click="$ctrl.alterar()"&gt;Clique para Mostrar&lt;/button&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.mostrarTexto = false;
+        $ctrl.mostrarTexto = false;
 
-        scope.alterar = function(){
-            scope.mostrarTexto = !scope.mostrarTexto;
+        $ctrl.alterar = function(){
+            $ctrl.mostrarTexto = !$ctrl.mostrarTexto;
         }
     }
 });</code></pre>
@@ -642,17 +672,18 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </p>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;h1 cp-if="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
+        &lt;h1 cp-if="$ctrl.mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
         &lt;h1 cp-else&gt;Esse é um texto de exemplo.&lt;/h1&gt;
 
-        &lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
+        &lt;button cp-click="$ctrl.alterar()"&gt;Clique para Mostrar&lt;/button&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.mostrarTexto = false;
+        $ctrl.mostrarTexto = false;
 
-        scope.alterar = function(){
-            scope.mostrarTexto = !scope.mostrarTexto;
+        $ctrl.alterar = function(){
+            $ctrl.mostrarTexto = !$ctrl.mostrarTexto;
         }
     }
 });</code></pre>
@@ -665,11 +696,12 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </p>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;h1 cp-init="inicializa('Esse é um exemplo')"&gt;String de teste&lt;/h1&gt;
+        &lt;h1 cp-init="$ctrl.inicializa('Esse é um exemplo')"&gt;String de teste&lt;/h1&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.inicializa = function( value ){
+        $ctrl.inicializa = function( value ){
             console.log("iniciou", value);
         }
 
@@ -685,18 +717,19 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </p>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;input cp-model="pessoa.nome"/&gt;
+        &lt;input cp-model="$ctrl.pessoa.nome"/&gt;
 
-        &lt;button type="button" cp-click="test()"&gt;Clique-me&lt;/button&gt;
+        &lt;button type="button" cp-click="$ctrl.test()"&gt;Clique-me&lt;/button&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.pessoa = {
+        $ctrl.pessoa = {
             nome: 'Mateus'
         };
 
-        scope.test = function(){
-            console.log(scope.pessoa.nome);
+        $ctrl.test = function(){
+            console.log($ctrl.pessoa.nome);
         };
 
     }
@@ -711,14 +744,15 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
         &lt;ul&gt;
-            &lt;li cp-repeat="pessoa in pessoas"&gt;
+            &lt;li cp-repeat="pessoa in $ctrl.pessoas"&gt;
                 [[pessoa.nome]]
             &lt;/li&gt;
         &lt;/ul&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.pessoas = [
+        $ctrl.pessoas = [
             {
                 nome: 'João'
             },
@@ -738,16 +772,17 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </p>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
-        &lt;h1 cp-show="mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
+        &lt;h1 cp-show="$ctrl.mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
 
-        &lt;button cp-click="alterar()"&gt;Clique para Mostrar&lt;/button&gt;
+        &lt;button cp-click="$ctrl.alterar()"&gt;Clique para Mostrar&lt;/button&gt;
     `,
-    controller: function(scope){
+    controller: function(){
+        const $ctrl = this;
 
-        scope.mostrarTexto = false;
+        $ctrl.mostrarTexto = false;
 
-        scope.alterar = function(){
-            scope.mostrarTexto = true;
+        $ctrl.alterar = function(){
+            $ctrl.mostrarTexto = true;
         }
 
     }
@@ -771,7 +806,10 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <a class="scrollto" href="#instalation-components">Instalação</a>
                                 <ul class="nav doc-sub-menu">
                                     <li>
-                                        <a class="scrollto" href="#import-component">Importação</a>
+                                        <a class="scrollto" href="#import-component">NPM</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cli-component">CLI</a>
                                     </li>
                                 </ul>
                             </li>
