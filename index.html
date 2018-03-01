@@ -645,7 +645,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     <h3 class="block-title">cp-if</h3>
                                     <p>
                                         O cpIf te possibilita mostrar ou ocultar elementos de acordo com uma condição,
-                                        diferente do ngShow os elementos são removidos
+                                        diferente do cpShow os elementos são removidos
                                         do documento e contruidos dinamicamente. Exemplo:
                                     </p>
                                     <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
@@ -668,7 +668,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <h3 class="block-title">cp-else</h3>
                                         <p>
                                             O cpElse deve ser utilizado logo após a diretiva cpIf, ela é visível quando
-                                            o ngIf retornar falso em sua condição. Exemplo:
+                                            o cpIf retornar falso em sua condição. Exemplo:
                                         </p>
                                         <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -684,6 +684,30 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
         $ctrl.alterar = function(){
             $ctrl.mostrarTexto = !$ctrl.mostrarTexto;
+        }
+    }
+});</code></pre>
+                                        <div id="cp-else-if-component" class="section-block">
+                                            <h3 class="block-title">cp-else-if</h3>
+                                            <p>
+                                                O cpElseIf deve ser utilizado logo após a diretiva cpIf e outras diretivas CpElseIf, ela é visível quando
+                                                o cpIf retornar falso e a condição da diretiva cpElseIf retorna verdadeiro. Exemplo:
+                                            </p>
+                                            <pre><span class="pre-type">JS</span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;h1 cp-if="$ctrl.contador == 2"&gt;H1 com IF tem a soma igual a [[$ctrl.contador]].&lt;/h1&gt;
+        &lt;h1 cp-else-if="$ctrl.contador == 3"&gt;H1 com ELSE IF tem a soma igual a [[$ctrl.contador]].&lt;/h1&gt;
+        &lt;h1 cp-else&gt;H1 com ELSE tem a soma igual a [[$ctrl.contador]].&lt;/h1&gt;
+
+        &lt;button cp-click="$ctrl.somar()"&gt;Clique para Somar&lt;/button&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.contador = 1;
+
+        $ctrl.somar = function(){
+            $ctrl.contador +=1;
         }
     }
 });</code></pre>
@@ -790,8 +814,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     </div>
                                 </div>
                         </section>
-
-
                     </div>
                     <!--//content-inner-->
                 </div>
@@ -893,6 +915,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-else-component">cp-else</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-else-if-component">cp-else-if</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-init-component">cp-init</a>
