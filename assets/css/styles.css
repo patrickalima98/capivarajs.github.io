@@ -1307,3 +1307,8 @@ select {
 /* Small devices (tablets, 768px and up) */
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
+
+.btn-github-intro{
+  border: 1px solid #EA5395;
+  margin-top: -8px;
+}
