@@ -1022,6 +1022,8 @@ select {
   margin-bottom: 30px;
   position: relative;
   text-align: center;
+  margin-left: 65px;
+  margin-top: -2px;
 }
 .promo-block .figure-holder-inner img {
   border: none;
