@@ -216,7 +216,11 @@ console.log(resultado);
                                     <br> Você pode enviar vários parâmetros no seu evento, para isso basta informa-los ao emitir
                                     um evento, logo após do seu nome.
                                     <pre><span class="pre-type"></span><code class="language-javascript">let meuParametro = 'CapivaraJS';
-capivara.$emit('meuEvento', meuParametro);</code></pre>
+capivara.$emit('meuEvento', this, meuParametro);</code></pre>
+                                    <br> Para receber os parâmetros enviados pela função emit é feito da seguinte forma.
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.$on('meuEvento', function(meuParametro){
+    console.log(meuParametro)
+});</code></pre>
                                 </div>
                             </section>
                             <!-- //doc-section -->
@@ -544,7 +548,8 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                 <div class="container">
                     <small class="copyright">Desenvolvido
                         <i class="fa fa-heart"></i> por
-                        <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a></small>
+                        <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a>
+                    </small>
 
                 </div>
                 <!--//container-->
