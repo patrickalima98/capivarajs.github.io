@@ -10,7 +10,7 @@
 /* ======= Base ======= */
 body {
   font-family: 'Open Sans', arial, sans-serif;
-  color: #494d55;
+  color: #282828;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -409,7 +409,7 @@ select {
 /* ======= Doc Styling ======= */
 .doc-wrapper {
   padding: 45px 0;
-  background: #f9f9fb;
+  background: #FFF;
 }
 .doc-body {
   position: relative;
