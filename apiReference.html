@@ -437,8 +437,8 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `        
         &lt;h1 cp-style="{color: $ctrl.numberOne == 70 ? 'red' : 'green'}"&gt; [[ $ctrl.numberOne + $ctrl.numberTwo ]] &lt;/h1&gt;
-        &lt;p cp-style="{ background: 'red'; padding: '10px';}"&gt;Exemplo 1&lt;/p&gt;
-        &lt;p cp-style="{ background: $ctrl.blue; padding: '10px';}">Exemplo 2&lt;/p&gt;
+        &lt;p cp-style="{ background: 'red', padding: '10px'}"&gt;Exemplo 1&lt;/p&gt;
+        &lt;p cp-style="{ background: $ctrl.blue, padding: '10px'}">Exemplo 2&lt;/p&gt;
     `,
     controller: function (scope) {
         let $ctrl = this;
