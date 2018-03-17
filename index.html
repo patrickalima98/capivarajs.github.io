@@ -26,8 +26,12 @@
 
     <div class="page-wrapper">
         <!-- ******Header****** -->
-        <header id="header" class="header text-center">
-            <div id="animate-particles"></div>
+        <header id="header" class="header text-center noselect">
+            <!-- Place this tag where you want the button to render. -->
+            <div style="position: absolute; top: 24px; right: 24px;    z-index: 99999;">
+                <a class="github-button" href="https://github.com/CapivaraJS/CapivaraJS" data-size="large" data-show-count="true" aria-label="Siga @CapivaraJS on GitHub">Siga @CapivaraJS</a>
+            </div>
+            
             <div class="container">
                 <div class="branding">
                     <h1 class="logo">
@@ -36,10 +40,10 @@
                 </div>
                 <!--//branding-->
                 <div class="tagline">
-                    <p>Feito com
-                        <i class="fa fa-heart"></i> para Desenvolvedores </p>
+                    <p>Um compilador para Web Components </p>
                 </div>
             </div>
+            <div id="animate-particles" style="position: absolute; top: 0; left: 0;    width: 100%;"></div>
             <!--//container-->
         </header>
         <!--//header-->
@@ -166,8 +170,22 @@
     <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script src="assets/js/particles.min.js"></script>
+    <script src="assets/js/stats.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script async src="https://unpkg.com/capivarajs@latest/dist/capivara.min.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99987123-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-99987123-4');
+    </script>
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 </body>
 

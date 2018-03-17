@@ -29,6 +29,10 @@
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
+            <div style="position: absolute; top: 24px; right: 24px;">
+                <a class="github-button" href="https://github.com/CapivaraJS/CapivaraJS" data-size="large" data-show-count="true" aria-label="Siga @CapivaraJS on GitHub">Siga @CapivaraJS</a>
+            </div>
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
             <div class="container">
                 <div class="branding">
                     <h1 class="logo">
@@ -86,7 +90,9 @@
                                         <pre><span class="pre-type"></span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
                                         <label class="warning" style="font-size: 11px;">Como alguns frameworks utilzam o símbolo # como caracter reservado(caso do VueJS)
                                             o capivara também permite a indexação por id ao invés da utilização da notação
-                                            acima.</label> <br>
+                                            acima.
+                                        </label>
+                                        <br>
                                         <br> Quando um componente é declarado, ele ainda não é iniciado, é através do marcador
                                         que vamos iniciar o componente. Exemplo:
                                         <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador').build();</code></pre>
@@ -436,7 +442,17 @@ capivara.componentBuilder('meuMarcador')
     <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-
+    <script async src="https://unpkg.com/capivarajs@latest/dist/capivara.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99987123-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-99987123-4');
+    </script>
 </body>
 
 </html>

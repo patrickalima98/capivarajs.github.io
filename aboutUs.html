@@ -29,6 +29,10 @@
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
+            <div style="position: absolute; top: 24px; right: 24px;">
+                <a class="github-button" href="https://github.com/CapivaraJS/CapivaraJS" data-size="large" data-show-count="true" aria-label="Siga @CapivaraJS on GitHub">Siga @CapivaraJS</a>
+            </div>
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
             <div class="container">
                 <div class="branding">
                     <h1 class="logo">
@@ -67,8 +71,8 @@
                                 <p>O
                                     <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a>
                                     é uma iniciativa totalmente open source, portanto dependemos muito da utilização da comunidade para fazer com que o Framework
-                                    consiga crescer e se tornar sólido, a ajuda de cada pessoa encontrador problemas, bugs
-                                    ou até mesmo nos enviando ideias de melhorias para o Framework é muito importante</p>
+                                    consiga crescer e se tornar sólido, a ajuda de cada pessoa para encontrar problemas,
+                                    bugs ou até mesmo nos enviar ideias de melhorias para o Framework é muito importante</p>
                                 <p>Com o decorrer da documentação outras ferramentas do capivara apareceram, como o
                                     <a href="https://github.com/CapivaraJS/capivara-cli" target="_blank">Capivara-CLI</a>, todos os nossos códigos são disponíveis para a comunidade através do
                                     nosso
@@ -117,7 +121,9 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                Agora entre novamente em nosso Github e abra o <a href="https://github.com/CapivaraJS/capivarajs/pulls" target="_blank">Pull Request</a>
+                                                Agora entre novamente em nosso Github e abra o
+                                                <a href="https://github.com/CapivaraJS/capivarajs/pulls"
+                                                    target="_blank">Pull Request</a>
                                             </li>
                                             <li>
                                                 Escolha a opção de comparação entre o nosso repositório e o seu fork clicando em
@@ -211,7 +217,17 @@
     <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-
+    <script async src="https://unpkg.com/capivarajs@latest/dist/capivara.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99987123-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-99987123-4');
+    </script>
 </body>
 
 </html>

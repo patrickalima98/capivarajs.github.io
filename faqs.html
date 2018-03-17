@@ -28,6 +28,10 @@
     <div class="page-wrapper">
         <!-- ******Header****** -->
         <header id="header" class="header">
+            <div style="position: absolute; top: 24px; right: 24px;">
+                <a class="github-button" href="https://github.com/CapivaraJS/CapivaraJS" data-size="large" data-show-count="true" aria-label="Siga @CapivaraJS on GitHub">Siga @CapivaraJS</a>
+            </div>
+            <script async defer src="https://buttons.github.io/buttons.js"></script>
             <div class="container">
                 <div class="branding">
                     <h1 class="logo">
@@ -140,8 +144,8 @@
                                                 já pode resolver.</li>
                                             <li>
                                                 <b>Reprodução do erro</b>- Nos mostre um exemplo do problema, pode ser utilizando
-                                                <a href="https://jsfiddle.net/" target="_blank">JSFiddle</a> ou <a href="https://plnkr.co/" target="_blank">Plunker</a> (ou qualquer outro editor online) para entendermos com
-                                                mais facilidade.
+                                                <a href="https://jsfiddle.net/" target="_blank">JSFiddle</a> ou
+                                                <a href="https://plnkr.co/" target="_blank">Plunker</a> (ou qualquer outro editor online) para entendermos com mais facilidade.
 
                                             </li>
                                             <li>
@@ -262,7 +266,17 @@
     <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-
+    <script async src="https://unpkg.com/capivarajs@latest/dist/capivara.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-99987123-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-99987123-4');
+    </script>
 </body>
 
 </html>
