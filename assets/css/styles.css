@@ -10,54 +10,33 @@
 /* ======= Base ======= */
 body {
   font-family: 'Open Sans', arial, sans-serif;
-  color: #494d55;
+  color: #282828;
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.particles-js-canvas-el{
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-pre{
-  margin-top: 10px
-}
-.result-demo{
-  border: 1px solid #eee;
-  border-radius: 2px;
-  padding: 25px 35px;
-  margin-top: 1em;
-  margin-bottom: 40px;
-  font-size: 1.2em;
-  line-height: 1.5em;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow-x: auto;
-}
 html,
 body {
   height: 100%;
-}
-.pre-type{
-  position: absolute;
-  right: 15px;
-  font-weight: 600;
 }
 .page-wrapper {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -50px;
 }
-label.warning{
-  color: #ab831b;
-}
 .page-wrapper:after {
   content: "";
   display: block;
   height: 50px;
+}
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 .footer {
   height: 50px;
@@ -337,7 +316,7 @@ select {
 }
 /* ====== Header ====== */
 .header {
-  background: #282828;
+  background: #494d55;
   color: rgba(255, 255, 255, 0.85);
   border-top: 5px solid #40babd;
   padding: 30px 0;
@@ -516,8 +495,8 @@ select {
   font-weight: bold;
 }
 .section-block {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .section-block .block-title {
   margin-top: 0;
@@ -1018,13 +997,13 @@ select {
   color: rgba(0, 0, 0, 0.5);
 }
 .promo-block .figure-holder-inner {
-  background: transparent;
+  background: #fff;
   margin-bottom: 30px;
   position: relative;
   text-align: center;
 }
 .promo-block .figure-holder-inner img {
-  border: none;
+  border: 5px solid #fff;
 }
 .promo-block .figure-holder-inner .mask {
   display: block;
@@ -1077,20 +1056,8 @@ select {
   border: none;
   color: #fff !important;
 }
-
-.image-logo-capivara{
-  width: 500px; 
-  margin-top: 24px; 
-  margin-bottom: 24px;
-}
-
 /* Extra small devices (phones, less than 768px) */
 @media (max-width: 767px) {
-  .image-logo-capivara{
-    width: 300px; 
-    margin-top: 24px; 
-    margin-bottom: 24px;
-  }
   .doc-content {
     margin-left: 0;
   }
@@ -1122,6 +1089,8 @@ select {
   background: #494d55;
   color: rgba(255, 255, 255, 0.85);
   padding: 60px 0;
+  position: relative;
+  overflow: hidden;
 }
 .landing-page .header a {
   color: #fff;
@@ -1308,7 +1277,22 @@ select {
 /* Medium devices (desktops, 992px and up) */
 /* Large devices (large desktops, 1200px and up) */
 
-.btn-github-intro{
-  border: 1px solid #EA5395;
-  margin-top: -8px;
+.result-demo{
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 25px 35px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overflow-x: auto;
 }
+
+.warning{
+  color: #ab831b;
+}
+
