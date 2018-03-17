@@ -79,14 +79,21 @@
                                             (tudo-minúsculo, deve conter um hífen), embora seguir esta convenção é considerada
                                             boa prática.</label>
                                         <br>
-                                        <br> Uma vez registrado, o componente já pode ser usado, para isso é necessário declara-lo
+                                        <br> Uma vez registrado, o componente já pode ser usado, para isso é necessário declará-lo
                                         com um marcador
                                         <b>(#meuMarcador)</b>. Por exemplo:
                                         <br>
                                         <pre><span class="pre-type"></span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
+                                        <label class="warning" style="font-size: 11px;">Como alguns frameworks utilzam o símbolo # como caracter reservado(caso do VueJS)
+                                            o capivara também permite a indexação por id ao invés da utilização da notação
+                                            acima.</label> <br>
                                         <br> Quando um componente é declarado, ele ainda não é iniciado, é através do marcador
                                         que vamos iniciar o componente. Exemplo:
                                         <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador').build();</code></pre>
+                                        <label class="warning" style="font-size: 11px;">Caso você esteja utilização da indexação por id, lembre-se que dentro do componenteBuilder
+                                            é necessário passar document.getElementById('meuMarcador')
+                                        </label>
+                                        <br>
                                         <br> O resultado final seria:
                                         <br>
                                         <div class="result-demo">
@@ -140,7 +147,7 @@ capivara.component('my-component', options)</code></pre>
                                                 <b>[bindings]</b>
                                             </td>
                                             <td>
-                                                Defini os parâmetros que o componente aceitará, se um parâmetro é definido como binding, toda a alteração feita pelo componente
+                                                Define os parâmetros que o componente aceitará, se um parâmetro é definido como binding, toda a alteração feita pelo componente
                                                 será refletido no contexto do parâmetro, em outras palavras, o binding mantém
                                                 a referência.
                                             </td>
@@ -162,10 +169,10 @@ capivara.component('my-component', options)</code></pre>
                                     </p>
                                     <p>Para entendermos como passar um parâmetro do tipo constante para um componente, vamos
                                         criar um exemplo onde passaremos uma constante com o nome de
-                                        <b>titulo</b>.</p>
+                                        <b>título</b>.</p>
 
                                     Primeiro, temos que informar o componente que iremos passar uma constante com o nome
-                                    <b>titulo</b>.
+                                    <b>título</b>.
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: '&lt;div&gt;&lt;/div&gt;',
     constants: ['titulo']
@@ -373,7 +380,8 @@ capivara.componentBuilder('meuMarcador')
                     </h3>
                     <div class="row">
                         <div class="figure-holder col-md-5 col-sm-6 col-xs-12">
-                            <img class="img-responsive" src="assets/images/capivara-texto-branco.png" height="300" width="300" style="margin-left: 75px; margin-top:-50px;"/>
+                            <img class="img-responsive" src="assets/images/capivara-texto-branco.png" height="300" width="300" style="margin-left: 75px; margin-top:-50px;"
+                            />
                         </div>
                         <!--//figure-holder-->
                         <div class="content-holder col-md-7 col-sm-6 col-xs-12">
