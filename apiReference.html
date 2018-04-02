@@ -426,6 +426,28 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-src-component" class="section-block">
+                                    <h3 class="block-title">cp-src</h3>
+                                    <p>
+                                        Utilizando cpSrc você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;img width="100px" cp-src="$ctrl.src" alt=""&gt;
+
+        &lt;button cp-click="$ctrl.click()"&gt;Clique para Mostrar&lt;/button&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.src = 'https://avatars1.githubusercontent.com/u/33517395?s=200&v=4';
+
+        $ctrl.click = () => {
+            $ctrl.src = 'https://bit.ly/2pTjZnU';
+        };
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-style-component" class="section-block">
                                     <h3 class="block-title">cp-style</h3>
                                     <p>
@@ -537,6 +559,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         </li>
                                         <li>
                                             <a class="scrollto" href="#cp-show-component">cp-show</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#cp-src-component">cp-src</a>
                                         </li>
                                         <li>
                                             <a class="scrollto" href="#cp-style-component">cp-style</a>
