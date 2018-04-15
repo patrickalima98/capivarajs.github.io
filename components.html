@@ -335,6 +335,80 @@ capivara.componentBuilder('meuMarcador')
                                 </div>
                                 <!--//doc-section-->
                             </section>
+                            <section id="lifecycle" class="doc-section">
+                                <h2 class="section-title">Ciclos de vida</h2>
+                                <p>Os ciclos de vida te permite detectar estadosdo componente e definir ações para cada um deles.</p>
+                                <div id="oninit">
+                                    <h3>$onInit</h3>
+                                    <p>Esse é o estado na qual será executado quando o controlador do componente for criado.</p>
+                                    <div class="section-block">
+                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: ``,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.$onInit = () => {
+            console.log('Controller initiated!');
+        }
+
+    }
+});</code></pre>
+                                    </div>
+                                </div>
+                                <div id="onviewinit">
+                                    <h3>$onViewInit</h3>
+                                    <p>Será executado quando o template do componente terminar a renderização.</p>
+                                    <div class="section-block">
+                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: ``,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.$onViewInit = () => {
+            console.log('Rendered view!');
+        }
+
+    }
+});</code></pre>
+                                    </div>
+                                </div>
+                                <div id="onchanges">
+                                    <h3>$onChanges</h3>
+                                    <p>Será executado for detectado alguma modificação de valores do seu componente.</p>
+                                    <div class="section-block">
+                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: ``,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.$onChanges = (changes) => {
+            console.log('Changes Detected: ', changes);
+        }
+
+    }
+});</code></pre>
+                                    </div>
+                                </div>
+                                <div id="destroy">
+                                    <h3>$destroy</h3>
+                                    <p>Será executado no momento em que o componente for destruído.</p>
+                                    <div class="section-block">
+                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: ``,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.$destroy = () => {
+            console.log('Component destroyed');
+        }
+
+    }
+});</code></pre>
+                                    </div>
+                                </div>
+
+                                <!--//doc-section-->
+                            </section>
                         </div>
                         <!--//content-inner-->
                     </div>
@@ -362,6 +436,24 @@ capivara.componentBuilder('meuMarcador')
                                         </li>
                                         <li>
                                             <a class="scrollto" href="#interpolation">Interpolação</a>
+                                        </li>
+                                    </ul>
+                                    <!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#lifecycle">Ciclo de vida</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li>
+                                            <a class="scrollto" href="#oninit">$onInit</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#onviewinit">$onViewInit</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#onchanges">$onChanges</a>
+                                        </li>
+                                        <li>
+                                            <a class="scrollto" href="#destroy">$destroy</a>
                                         </li>
                                     </ul>
                                     <!--//nav-->
@@ -427,7 +519,8 @@ capivara.componentBuilder('meuMarcador')
         <div class="container">
             <small class="copyright">Desenvolvido
                 <i class="fa fa-heart"></i> por
-                <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a></small>
+                <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a>
+            </small>
 
         </div>
         <!--//container-->
