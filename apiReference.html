@@ -358,6 +358,59 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-key-component" class="section-block">
+                                    <h3 class="block-title">cp-key</h3>
+                                    <p>
+                                        Muito semelhante ao cp-click, o cp-key dispara o evento quando uma determinada
+                                        tecla for clicada, a diretiva suporta múltiplas teclas, e o nome da diretiva muda com a função
+                                        que ela está exercendo, como podemos observar no exemplo abaixo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;input cp-keypress.enter="$ctrl.envio()"&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+
+        $ctrl.envio = function(){
+            alert('Dados enviados');
+        };
+    }
+});</code></pre>
+                                </div>
+                                <div id="cp-max-component" class="section-block">
+                                    <h3 class="block-title">cp-max</h3>
+                                    <p>
+                                       A diretiva cp-max serve para determinar o máximo quem um componente pode alcançar,
+                                       mas nesse caso não determina o tamanho de uma entrada de texto, e sim em casos de
+                                       input do tipo range ou number. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;input type="range" cp-max="$ctrl.maxRange"&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.maxRange = 20;
+    }
+});</code></pre>
+                                </div>
+                                <div id="cp-min-component" class="section-block">
+                                    <h3 class="block-title">cp-min</h3>
+                                    <p>
+                                        Complementar a diretiva cp-max o cp-min determina qual é o menor valor que um input
+                                        do tipo range ou number pode ter. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;input type="range" cp-min="$ctrl.minRange"&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.minRange = 20;
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-model-component" class="section-block">
                                     <h3 class="block-title">cp-model</h3>
                                     <p>
@@ -448,6 +501,22 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-step-component" class="section-block">
+                                    <h3 class="block-title">cp-step</h3>
+                                    <p>
+                                        A diretiva cp-step faz com que o intervalo de avanço de um input do tipo number ou range
+                                        seja atribuído ao valor que o cp-step possui. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;input type="number" cp-step="$ctrl.stepJump"&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.stepJump = 3;
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-style-component" class="section-block">
                                     <h3 class="block-title">cp-style</h3>
                                     <p>
@@ -474,7 +543,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 });</code></pre>
                                 </div>
                         </section>
-
                         <!--//doc-section-->
                     </div>
                     <!--//content-inner-->
@@ -553,6 +621,15 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <a class="scrollto" href="#cp-init-component">cp-init</a>
                                     </li>
                                     <li>
+                                        <a class="scrollto" href="#cp-key-component">cp-key</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-max-component">cp-max</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-min-component">cp-min</a>
+                                    </li>
+                                    <li>
                                         <a class="scrollto" href="#cp-model-component">cp-model</a>
                                     </li>
                                     <li>
@@ -563,6 +640,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-src-component">cp-src</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-step-component">cp-step</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-style-component">cp-style</a>
