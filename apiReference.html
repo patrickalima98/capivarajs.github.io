@@ -229,6 +229,26 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
                             <section id="directives-capivara" class="doc-section">
                                 <h2 class="section-title">Diretivas</h2>
+                                <div id="cp-blur-component" class="section-block">
+                                    <h3 class="block-title">cp-blur</h3>
+                                    <p>
+                                        O cp-blur é uma diretiva destinada a executar funções quando um determinado input for desselecionado. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+    &lt;input type="text" cp-blur="$ctrl.blured()""&gt;
+    &lt;br&gt;&lt;h1&gt;[[$ctrl.text]]&lt;/h1&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.text = "False"
+
+        $ctrl.blured = function(){
+            $ctrl.text = "True";
+        }
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-class-component" class="section-block">
                                     <h3 class="block-title">cp-class</h3>
                                     <p>
@@ -269,10 +289,25 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-disabled-component" class="section-block">
+                                    <h3 class="block-title">cp-disabled</h3>
+                                    <p>
+                                        Com essa diretiva você pode ativar e desativar elementos de acordo com condições ou valores diretos. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;button cp-disabled="$ctrl.isDisabled"&gt;Clique-me&lt;/button&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.isDisabled = false;
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-if-component" class="section-block">
                                     <h3 class="block-title">cp-if</h3>
                                     <p>
-                                        O cpIf te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do cpShow os elementos são removidos
+                                        O cp-if te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do cp-show os elementos são removidos
                                         do documento e contruidos dinamicamente. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
@@ -295,8 +330,8 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-else-if-component" class="section-block">
                                     <h3 class="block-title">cp-else-if</h3>
                                     <p>
-                                        O cpElseIf deve ser utilizado logo após a diretiva cpIf e outras diretivas CpElseIf, ela é visível quando o cpIf retornar
-                                        falso e a condição da diretiva cpElseIf retorna verdadeiro. Exemplo:
+                                        O cp-else-if deve ser utilizado logo após a diretiva cp-if e outras diretivas cp-else-if, ela é visível quando o cp-if retornar
+                                        falso e a condição da diretiva cp-else-if retorna verdadeiro. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -320,7 +355,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-else-component" class="section-block">
                                     <h3 class="block-title">cp-else</h3>
                                     <p>
-                                        O cpElse deve ser utilizado logo após a diretiva cpIf, ela é visível quando o cpIf retornar falso em sua condição. Exemplo:
+                                        O cp-else deve ser utilizado logo após a diretiva cp-if, ela é visível quando o cp-if retornar falso em sua condição. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -340,10 +375,45 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-focus-component" class="section-block">
+                                    <h3 class="block-title">cp-focus</h3>
+                                    <p>
+                                        O cp-focus é uma diretiva destinada a executar funções quando um determinado input for selecionado. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+    &lt;input type="text" cp-focus="$ctrl.focused()"&gt;
+    &lt;br&gt;&lt;h1&gt;[[$ctrl.text]]&lt;/h1&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.text = "Input not Focused"
+
+        $ctrl.focused = function(){
+            $ctrl.text = "Input focused";
+        }
+    }
+});</code></pre>
+                                </div>
+                                <div id="cp-hide-component" class="section-block">
+                                    <h3 class="block-title">cp-hide</h3>
+                                    <p>
+                                        O cp-hide faz com que o elemento que carregue a diretiva possa ser ocultado ou não, dependendo de uma valor booleano de controle.  Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template:`
+        &lt;input type="text" cp-model="$ctrl.color"&gt;
+        &lt;div cp-hide ="$ctrl.color == 'red'" style=" width:50px; height:50px; background: red" &gt;&lt;/div&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-init-component" class="section-block">
                                     <h3 class="block-title">cp-init</h3>
                                     <p>
-                                        O cpInit permite a execução de uma função quando um determinado elemento for renderizado. Exemplo:
+                                        O cp-init permite a execução de uma função quando um determinado elemento for renderizado. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -395,6 +465,22 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     }
 });</code></pre>
                                 </div>
+                                <div id="cp-maxlength-component" class="section-block">
+                                    <h3 class="block-title">cp-maxlength</h3>
+                                    <p>
+                                        A diretiva cp-maxlength determinar o tamanho máximo de uma entrada, essa diretiva
+                                        funciona com input do tipo text. Exemplo:
+                                    </p>
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
+    template: `
+        &lt;input type="text" cp-maxlength="$ctrl.maxLength"&gt;
+    `,
+    controller: function(){
+        const $ctrl = this;
+        $ctrl.maxLength = 20;
+    }
+});</code></pre>
+                                </div>
                                 <div id="cp-min-component" class="section-block">
                                     <h3 class="block-title">cp-min</h3>
                                     <p>
@@ -437,7 +523,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-repeat-component" class="section-block">
                                     <h3 class="block-title">cp-repeat</h3>
                                     <p>
-                                        O cpRepeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
+                                        O cp-repeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -460,7 +546,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-show-component" class="section-block">
                                     <h3 class="block-title">cp-show</h3>
                                     <p>
-                                        O cpShow te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
+                                        O cp-show te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -482,7 +568,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-src-component" class="section-block">
                                     <h3 class="block-title">cp-src</h3>
                                     <p>
-                                        Utilizando cpSrc você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
+                                        Utilizando cp-src você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: `
@@ -520,7 +606,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <div id="cp-style-component" class="section-block">
                                     <h3 class="block-title">cp-style</h3>
                                     <p>
-                                        Com o cpStyle você pode modificar os style do seu componente dinâmicamente, através de outras diretivas como cp-click, inputs
+                                        Com o cp-style você pode modificar os style do seu componente dinâmicamente, através de outras diretivas como cp-click, inputs
                                         ou variáveis. Exemplo:
                                     </p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
@@ -603,10 +689,16 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <a class="scrollto" href="#directives-capivara">Diretivas</a>
                                 <ul class="nav doc-sub-menu">
                                     <li>
+                                        <a class="scrollto" href="#cp-blur-component">cp-blur</a>
+                                    </li>
+                                    <li>
                                         <a class="scrollto" href="#cp-class-component">cp-class</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-click-component">cp-click</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-disabled-component">cp-disabled</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-if-component">cp-if</a>
@@ -618,6 +710,12 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <a class="scrollto" href="#cp-else-component">cp-else</a>
                                     </li>
                                     <li>
+                                        <a class="scrollto" href="#cp-focus-component">cp-focus</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-hide-component">cp-hide</a>
+                                    </li>
+                                    <li>
                                         <a class="scrollto" href="#cp-init-component">cp-init</a>
                                     </li>
                                     <li>
@@ -625,6 +723,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-max-component">cp-max</a>
+                                    </li>
+                                    <li>
+                                        <a class="scrollto" href="#cp-maxlength-component">cp-maxlength</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-min-component">cp-min</a>
