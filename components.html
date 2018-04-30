@@ -83,35 +83,27 @@
                                             (tudo-minúsculo, deve conter um hífen), embora seguir esta convenção é considerada
                                             boa prática.</label>
                                         <br>
-                                        <br> Uma vez registrado, o componente já pode ser usado, para isso é necessário declará-lo
-                                        com um marcador
-                                        <b>(#meuMarcador)</b>. Por exemplo:
+                                        <br> Uma vez registrado, o componente já pode ser usado. Por exemplo:
                                         <br>
-                                        <pre><span class="pre-type"></span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
+                                        <pre><span class="pre-type"></span><code class="language-markup">&lt;my-component&gt;&lt;/my-component&gt;</code></pre>
                                         <label class="warning" style="font-size: 11px;">Como alguns frameworks utilzam o símbolo # como caracter reservado(caso do VueJS)
                                             o capivara também permite a indexação por id ao invés da utilização da notação
                                             acima.
                                         </label>
                                         <br>
-                                        <br> Quando um componente é declarado, ele ainda não é iniciado, é através do marcador
-                                        que vamos iniciar o componente. Exemplo:
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador').build();</code></pre>
-                                        <label class="warning" style="font-size: 11px;">Caso você esteja utilização da indexação por id, lembre-se que dentro do componenteBuilder
-                                            é necessário passar document.getElementById('meuMarcador')
-                                        </label>
-                                        <br>
                                         <br> O resultado final seria:
                                         <br>
                                         <div class="result-demo">
-                                            <div>Uhaau! Esse é meu primeiro componente.</div>
+                                            <script async src="//jsfiddle.net/4vupgrbw/1/embed/js,html,result/"></script>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- first topic -->
                                 <div id="configobject">
                                     <h3 class="block-title">Objeto de configuração</h3>
-                                    <p>O objeto configuração é responsável pela criação do seu componente, é nele que será definido
-                                        as variáveis que serão aceitas, o template e controlador do mesmo. Exemplo:</p>
+                                    <p>Quando você declara o componente é possivel fazer várias configurações, o objeto configuração
+                                        é responsável pela criação do seu componente, é nele que será definido as variáveis
+                                        que serão aceitas, o template e controlador do mesmo. Exemplo:</p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">const options = {
     template  : STRING,
     constants : ARRAY,
@@ -177,7 +169,7 @@ capivara.component('my-component', options)</code></pre>
                                         criar um exemplo onde passaremos uma constante com o nome de
                                         <b>título</b>.</p>
 
-                                    Primeiro, temos que informar o componente que iremos passar uma constante com o nome
+                                    Primeiro, temos que informar o componente que iremos receber uma constante com o nome
                                     <b>título</b>.
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
     template: '&lt;div&gt;&lt;/div&gt;',
@@ -192,24 +184,20 @@ capivara.component('my-component', options)</code></pre>
                                     <pre><span class="pre-type"></span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
                                     <br>
                                     <p>Você pode passar o valor da sua constante na inicialização do componente.</p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador')
-    .constants({
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador').then((instance) => {
+    instance.constants({
         titulo: 'Meu incrível titulo'
-    }).build();</code></pre>
+    }).build();
+})</code></pre>
                                     <br>
                                     <p>Pronto, sua constante foi passada para o componente, toda constante está disponível na
                                         propriedade
                                         <b>$constants</b> do seu escopo, por exemplo:</p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: '&lt;div&gt;&lt;/div&gt;',
+    template: '&lt;div&gt;[[ $ctrl.$constants.titulo ]]&lt;/div&gt;',
     constants: ['titulo'],
     controller: function(){
         const $ctrl = this;
-
-        $ctrl.$onInit = function(){
-            console.log($ctrl.$constants.titulo);
-        }
-
     }
 });</code></pre>
                                 </div>
@@ -238,17 +226,18 @@ capivara.component('my-component', options)</code></pre>
                                     <br>
                                     <p>O componente está preparado para receber nossa função, pode passa-la na inicialização
                                         do componente</p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador')
-    .functions({
+                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.componentBuilder('meuMarcador').then((instance) => {
+    instance.functions({
         onClickButton: function(){
             console.log('Uhaau! Funcionou!!!');
         }
-    }).build();</code></pre>
+    }).build();
+})</code></pre>
                                     <br>
                                     <p>Pronto, sua função foi passada para o componente, toda função está disponível na propriedade
                                         <b>$functions</b> do seu escopo, e basta apenas executa-la, por exemplo:</p>
                                     <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: '&lt;button type="button" cp-click="$functions.onClickButton()"&gt;Clique-me&lt;/button&gt;',
+    template: '&lt;button type="button" cp-click="$ctrl.$functions.onClickButton()"&gt;Clique-me&lt;/button&gt;',
     functions: ['onClickButton'],
     controller: function(){
         const $ctrl = this;
@@ -270,41 +259,9 @@ capivara.component('my-component', options)</code></pre>
                                         <b>pessoa</b> e nosso componente irá alterar o
                                         <b>nome</b> dessa pessoa.
                                         <br>
-                                        <br> Primeiro, temos que informar o componente que iremos receber um parâmetro do tipo
-                                        binding chamado
-                                        <b>nome</b>.
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: '',
-    bindings: ['nome']
-});</code></pre>
-                                        <br>
-                                        <p>
-                                            É sempre valido reforçar o fato de que seu código HTML não sofre alterações
-                                        </p>
-
-                                        <pre><span class="pre-type"></span><code class="language-markup">&lt;my-component #meuMarcador&gt;&lt;/my-component&gt;</code></pre>
-                                        <br>
-                                        <p>O componente está preparado para receber nosso parâmetro, precisamos informa-lo na
-                                            inicialização do componente, é necessário informar seu contexto atual, para que
-                                            o componente possa atualiza-lo quando uma alteração acorrer.</p>
-                                        <pre><span class="pre-type"></span><code class="language-javascript">let pessoa = { nome: 'Mateus' };
-capivara.componentBuilder('meuMarcador')
-        .context(pessoa)
-        .bindings({
-            nome: 'nome'
-        }).build();</code></pre>
-                                        <br>
-                                        <p>Perceba que quando declaramos nosso binding, colocamos o nome do atributo que está
-                                            no contexto, fazendo assim que a refêrencia entre os escopos seja criada.</p>
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: '&lt;input type="text" cp-model="$bindings.nome"/&gt;',
-    bindings: ['nome'],
-    controller: function(){
-        const $ctrl = this;
-    }
-});</code></pre>
-                                        <p>Perceba que no exemplo acima usamos a diretiva
-                                            <b>cp-model</b> a documentação dela será vista depois.</p>
+                                        <div class="result-demo">
+                                            <script async src="//jsfiddle.net/td4v7qqd/50/embed/"></script>
+                                        </div>
                                 </div>
                                 <br>
                                 <!-- fourth topic -->
@@ -316,21 +273,9 @@ capivara.componentBuilder('meuMarcador')
                                     <p>Para compreendermos a interpolação, vamos criar um exemplo onde será apresentado em um
                                         elemento
                                         <b>h1</b> a soma de dois números do nosso escopo.</p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;h1&gt;Soma: [[ $ctrl.numero1 + $ctrl.numero2 ]]&lt;/h1&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.numero1 = 10;
-        $ctrl.numero2 = 15;
-    }
-});</code></pre>
-                                    <br> O resultado final seria:
                                     <br>
                                     <div class="result-demo">
-                                        <h1>Soma: 25</h1>
+                                        <script async src="//jsfiddle.net/95sjneu8/5/embed/js,html,result/"></script>
                                     </div>
                                 </div>
                                 <!--//doc-section-->
@@ -342,68 +287,28 @@ capivara.componentBuilder('meuMarcador')
                                     <h3>$onInit</h3>
                                     <p>Esse é o estado na qual será executado quando o controlador do componente for criado.</p>
                                     <div class="section-block">
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: ``,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.$onInit = () => {
-            console.log('Controller initiated!');
-        }
-
-    }
-});</code></pre>
+                                        <pre><script async src="//jsfiddle.net/53z8zq6q/5/embed/js/"></script></pre>
                                     </div>
                                 </div>
                                 <div id="onviewinit">
                                     <h3>$onViewInit</h3>
                                     <p>Será executado quando o template do componente terminar a renderização.</p>
                                     <div class="section-block">
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: ``,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.$onViewInit = () => {
-            console.log('Rendered view!');
-        }
-
-    }
-});</code></pre>
+                                        <pre><script async src="//jsfiddle.net/53z8zq6q/6/embed/js/"></script></pre>
                                     </div>
                                 </div>
                                 <div id="onchanges">
                                     <h3>$onChanges</h3>
                                     <p>Será executado for detectado alguma modificação de valores do seu componente.</p>
                                     <div class="section-block">
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: ``,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.$onChanges = (changes) => {
-            console.log('Changes Detected: ', changes);
-        }
-
-    }
-});</code></pre>
+                                        <pre><script async src="//jsfiddle.net/53z8zq6q/8/embed/js/"></script></pre>
                                     </div>
                                 </div>
                                 <div id="destroy">
                                     <h3>$destroy</h3>
                                     <p>Será executado no momento em que o componente for destruído.</p>
                                     <div class="section-block">
-                                        <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: ``,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.$destroy = () => {
-            console.log('Component destroyed');
-        }
-
-    }
-});</code></pre>
+                                        <pre><script async src="//jsfiddle.net/53z8zq6q/10/embed/js/"></script></pre>
                                     </div>
                                 </div>
 

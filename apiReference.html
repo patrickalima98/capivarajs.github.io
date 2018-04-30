@@ -234,75 +234,28 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     <p>
                                         O cp-blur é uma diretiva destinada a executar funções quando um determinado input for desselecionado. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-    &lt;input type="text" cp-blur="$ctrl.blured()""&gt;
-    &lt;br&gt;&lt;h1&gt;[[$ctrl.text]]&lt;/h1&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.text = "False"
-
-        $ctrl.blured = function(){
-            $ctrl.text = "True";
-        }
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/11/embed/"></script></pre>
                                 </div>
                                 <div id="cp-class-component" class="section-block">
                                     <h3 class="block-title">cp-class</h3>
                                     <p>
                                         Com a diretiva cp-class você pode modificar dinâmicamente as classes dentro do seu componente. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `        
-        &lt;p cp-class="{ democlass: $ctrl.visible }"&gt;Um simples exemplo&lt;/p&gt; 
-        &lt;button cp-click="$ctrl.teste()"&gt;Mudar cor&lt;/button&gt;
-    `,
-    controller: function () {
-        let $ctrl = this;
-        
-        $ctrl.$onInit = function(){
-            $ctrl.visible = true;
-        };
-        $ctrl.teste = function(){
-            $ctrl.visible = !$ctrl.visible;
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/9/embed/"></script></pre>
                                 </div>
                                 <div id="cp-click-component" class="section-block">
                                     <h3 class="block-title">cp-click</h3>
                                     <p>
                                         Você pode executar uma função do seu escopo. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;button cp-click="$ctrl.minhaFuncao()"&gt;Clique-me&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.minhaFuncao = function(){
-            console.log('Minha função foi executada.');
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/12/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-disabled-component" class="section-block">
                                     <h3 class="block-title">cp-disabled</h3>
                                     <p>
                                         Com essa diretiva você pode ativar e desativar elementos de acordo com condições ou valores diretos. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;button cp-disabled="$ctrl.isDisabled"&gt;Clique-me&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.isDisabled = false;
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/13/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-if-component" class="section-block">
                                     <h3 class="block-title">cp-if</h3>
@@ -310,22 +263,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         O cp-if te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do cp-show os elementos são removidos
                                         do documento e contruidos dinamicamente. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;h1 cp-if="$ctrl.mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
-
-        &lt;button cp-click="$ctrl.alterar()"&gt;Clique para Mostrar&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.mostrarTexto = false;
-
-        $ctrl.alterar = function(){
-            $ctrl.mostrarTexto = !$ctrl.mostrarTexto;
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/17/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-else-if-component" class="section-block">
                                     <h3 class="block-title">cp-else-if</h3>
@@ -333,120 +271,44 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         O cp-else-if deve ser utilizado logo após a diretiva cp-if e outras diretivas cp-else-if, ela é visível quando o cp-if retornar
                                         falso e a condição da diretiva cp-else-if retorna verdadeiro. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;h1 cp-if="$ctrl.contador == 2"&gt;H1 com IF tem a soma igual a [[$ctrl.contador]].&lt;/h1&gt;
-        &lt;h1 cp-else-if="$ctrl.contador == 3"&gt;H1 com ELSE IF tem a soma igual a [[$ctrl.contador]].&lt;/h1&gt;
-        &lt;h1 cp-else&gt;H1 com ELSE tem a soma igual a [[$ctrl.contador]].&lt;/h1&gt;
-
-        &lt;button cp-click="$ctrl.somar()"&gt;Clique para Somar&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.contador = 1;
-
-        $ctrl.somar = function(){
-            $ctrl.contador +=1;
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/19/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-else-component" class="section-block">
                                     <h3 class="block-title">cp-else</h3>
                                     <p>
                                         O cp-else deve ser utilizado logo após a diretiva cp-if, ela é visível quando o cp-if retornar falso em sua condição. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;h1 cp-if="$ctrl.mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
-        &lt;h1 cp-else&gt;Esse é um texto de exemplo.&lt;/h1&gt;
-
-    &lt;button cp-click="$ctrl.alterar()"&gt;Clique para Mostrar&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.mostrarTexto = false;
-
-        $ctrl.alterar = function(){
-            $ctrl.mostrarTexto = !$ctrl.mostrarTexto;
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/20/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-focus-component" class="section-block">
                                     <h3 class="block-title">cp-focus</h3>
                                     <p>
                                         O cp-focus é uma diretiva destinada a executar funções quando um determinado input for selecionado. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-    &lt;input type="text" cp-focus="$ctrl.focused()"&gt;
-    &lt;br&gt;&lt;h1&gt;[[$ctrl.text]]&lt;/h1&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.text = "Input not Focused"
-
-        $ctrl.focused = function(){
-            $ctrl.text = "Input focused";
-        }
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/23/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-hide-component" class="section-block">
                                     <h3 class="block-title">cp-hide</h3>
                                     <p>
                                         O cp-hide faz com que o elemento que carregue a diretiva possa ser ocultado ou não, dependendo de uma valor booleano de controle.  Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template:`
-        &lt;input type="text" cp-model="$ctrl.color"&gt;
-        &lt;div cp-hide ="$ctrl.color == 'red'" style=" width:50px; height:50px; background: red" &gt;&lt;/div&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/25/embed/"></script></pre>
                                 </div>
                                 <div id="cp-init-component" class="section-block">
                                     <h3 class="block-title">cp-init</h3>
                                     <p>
                                         O cp-init permite a execução de uma função quando um determinado elemento for renderizado. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;h1 cp-init="$ctrl.inicializa('Esse é um exemplo')"&gt;String de teste&lt;/h1&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.inicializa = function( value ){
-            console.log('iniciou', value);
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/27/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-key-component" class="section-block">
                                     <h3 class="block-title">cp-key</h3>
                                     <p>
-                                        Muito semelhante ao cp-click, o cp-key dispara o evento quando uma determinada
-                                        tecla for clicada, a diretiva suporta múltiplas teclas, e o nome da diretiva muda com a função
+                                        O cp-key dispara o evento quando uma determinada
+                                        tecla for precionada, a diretiva suporta múltiplas teclas, e o nome da diretiva muda com a função
                                         que ela está exercendo, como podemos observar no exemplo abaixo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;input cp-keypress.enter="$ctrl.envio()"&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.envio = function(){
-            alert('Dados enviados');
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/32/embed/"></script></pre>
                                 </div>
                                 <div id="cp-max-component" class="section-block">
                                     <h3 class="block-title">cp-max</h3>
@@ -455,15 +317,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                        mas nesse caso não determina o tamanho de uma entrada de texto, e sim em casos de
                                        input do tipo range ou number. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;input type="range" cp-max="$ctrl.maxRange"&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.maxRange = 20;
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/35/embed/"></script></pre>
                                 </div>
                                 <div id="cp-maxlength-component" class="section-block">
                                     <h3 class="block-title">cp-maxlength</h3>
@@ -471,15 +325,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         A diretiva cp-maxlength determinar o tamanho máximo de uma entrada, essa diretiva
                                         funciona com input do tipo text. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;input type="text" cp-maxlength="$ctrl.maxLength"&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.maxLength = 20;
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/36/embed/"></script></pre>
                                 </div>
                                 <div id="cp-min-component" class="section-block">
                                     <h3 class="block-title">cp-min</h3>
@@ -487,15 +333,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         Complementar a diretiva cp-max o cp-min determina qual é o menor valor que um input
                                         do tipo range ou number pode ter. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;input type="range" cp-min="$ctrl.minRange"&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.minRange = 20;
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/37/embed/"></script></pre>
                                 </div>
                                 <div id="cp-model-component" class="section-block">
                                     <h3 class="block-title">cp-model</h3>
@@ -503,89 +341,28 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         Essa diretiva possibilita a interação do seu escopo com as input, quando usamos cp-model toda modificação de uma input é
                                         aplicada no escopo. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;input cp-model="$ctrl.pessoa.nome"/&gt;
-
-        &lt;button type="button" cp-click="$ctrl.test()"&gt;Clique-me&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.pessoa = { nome: 'Mateus'};
-
-        $ctrl.test = function(){
-            console.log($ctrl.pessoa.nome);
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/39/embed/"></script></pre>
                                 </div>
                                 <div id="cp-repeat-component" class="section-block">
                                     <h3 class="block-title">cp-repeat</h3>
                                     <p>
                                         O cp-repeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;ul&gt;
-            &lt;li cp-repeat="pessoa in $ctrl.pessoas"&gt;
-                [[pessoa.nome]]
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.pessoas = [
-            { nome: 'João' },
-            { nome: 'Maria' }
-        ];
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/42/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-show-component" class="section-block">
                                     <h3 class="block-title">cp-show</h3>
                                     <p>
                                         O cp-show te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;h1 cp-show="$ctrl.mostrarTexto"&gt;Esse é um texto de exemplo.&lt;/h1&gt;
-
-        &lt;button cp-click="$ctrl.alterar()"&gt;Clique para Mostrar&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.mostrarTexto = false;
-
-        $ctrl.alterar = function(){
-            $ctrl.mostrarTexto = true;
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/43/embed/"></script></pre>
                                 </div>
                                 <div id="cp-src-component" class="section-block">
                                     <h3 class="block-title">cp-src</h3>
                                     <p>
                                         Utilizando cp-src você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;img width="100px" cp-src="$ctrl.src" alt=""&gt;
-
-        &lt;button cp-click="$ctrl.click()"&gt;Clique para Mostrar&lt;/button&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-
-        $ctrl.src = 'https://avatars1.githubusercontent.com/u/33517395?s=200&v=4';
-
-        $ctrl.click = () => {
-            $ctrl.src = 'https://bit.ly/2pTjZnU';
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/45/embed/js,html,result/"></script></pre>
                                 </div>
                                 <div id="cp-step-component" class="section-block">
                                     <h3 class="block-title">cp-step</h3>
@@ -593,15 +370,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         A diretiva cp-step faz com que o intervalo de avanço de um input do tipo number ou range
                                         seja atribuído ao valor que o cp-step possui. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `
-        &lt;input type="number" cp-step="$ctrl.stepJump"&gt;
-    `,
-    controller: function(){
-        const $ctrl = this;
-        $ctrl.stepJump = 3;
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/47/embed/"></script></pre>
                                 </div>
                                 <div id="cp-style-component" class="section-block">
                                     <h3 class="block-title">cp-style</h3>
@@ -609,24 +378,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         Com o cp-style você pode modificar os style do seu componente dinâmicamente, através de outras diretivas como cp-click, inputs
                                         ou variáveis. Exemplo:
                                     </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.component('my-component', {
-    template: `        
-        &lt;h1 cp-style="{color: $ctrl.numberOne == 70 ? 'red' : 'green'}"&gt; 
-            [[ $ctrl.numberOne + $ctrl.numberTwo ]] 
-        &lt;/h1&gt;
-        &lt;p cp-style="{ background: 'red', padding: '10px'}"&gt;Exemplo 1&lt;/p&gt;
-        &lt;p cp-style="{ background: $ctrl.blue, padding: '10px'}">Exemplo 2&lt;/p&gt;
-    `,
-    controller: function () {
-        let $ctrl = this;
-        
-        $ctrl.$onInit = function(){
-            $ctrl.numberOne = 50;
-            $ctrl.numberTwo = 80;
-            $ctrl.blue = 'blue';
-        };
-    }
-});</code></pre>
+                                    <pre><script async src="//jsfiddle.net/td4v7qqd/48/embed/"></script></pre>
                                 </div>
                         </section>
                         <!--//doc-section-->
