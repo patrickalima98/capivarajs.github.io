@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="favicon.ico">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
-        rel='stylesheet' type='text/css'>
+          rel='stylesheet' type='text/css'>
     <!-- Global CSS -->
     <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
     <!-- Plugins CSS -->
@@ -25,135 +25,135 @@
 </head>
 
 <body class="body-blue">
-    <div class="page-wrapper">
-        <!-- ******Header****** -->
-        <header id="header" class="header">
-            <div class="container">
-                <div class="branding">
-                    <h1 class="logo">
-                        <a href="index.html">
-                            <span aria-hidden="true"></span>
-                            <span class="text-highlight">Capivara</span>
-                            <span class="text-bold">JS</span>
-                        </a>
-                    </h1>
-                </div>
-                <!--//branding-->
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li class="active">API-Reference</li>
-                </ol>
+<div class="page-wrapper">
+    <!-- ******Header****** -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="branding">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <span aria-hidden="true"></span>
+                        <span class="text-highlight">Capivara</span>
+                        <span class="text-bold">JS</span>
+                    </a>
+                </h1>
             </div>
-            <!--//container-->
-        </header>
-        <!--//header-->
-        <div class="doc-wrapper">
-            <div class="container">
-                <div id="doc-header" class="doc-header text-center">
-                    <h1 class="doc-title">
-                        <span aria-hidden="true" class="icon fa fa-book"></span> API-Reference</h1>
-                    <div class="meta">
-                        <i class="fa fa-clock-o"></i> Última atualização: 11 de Março, 2018</div>
-                </div>
-                <!--//doc-header-->
-                <div class="doc-body">
-                    <div class="doc-content">
-                        <div class="content-inner">
-                            <section id="functions" class="doc-section">
-                                <h2 class="section-title">Funções</h2>
-                                <p>
-                                    Criamos algumas funções que podem facilitar no seu desenvolvimento, abaixo vamos entender cada uma delas.
-                                </p>
+            <!--//branding-->
+            <ol class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">API-Reference</li>
+            </ol>
+        </div>
+        <!--//container-->
+    </header>
+    <!--//header-->
+    <div class="doc-wrapper">
+        <div class="container">
+            <div id="doc-header" class="doc-header text-center">
+                <h1 class="doc-title">
+                    <span aria-hidden="true" class="icon fa fa-book"></span> API-Reference</h1>
+                <div class="meta">
+                    <i class="fa fa-clock-o"></i> Última atualização: 11 de Março, 2018</div>
+            </div>
+            <!--//doc-header-->
+            <div class="doc-body">
+                <div class="doc-content">
+                    <div class="content-inner">
+                        <section id="functions" class="doc-section">
+                            <h2 class="section-title">Funções</h2>
+                            <p>
+                                Criamos algumas funções que podem facilitar no seu desenvolvimento, abaixo vamos entender cada uma delas.
+                            </p>
 
-                                <div id="is-array-component" class="section-block">
-                                    <h3 class="block-title">capivara.isArray</h3>
-                                    <p>Determina se uma referência é um array, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let pessoas = [{ nome: 'João' }];
+                            <div id="is-array-component" class="section-block">
+                                <h3 class="block-title">capivara.isArray</h3>
+                                <p>Determina se uma referência é um array, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let pessoas = [{ nome: 'João' }];
 let resultado = capivara.isArray(pessoas);
 
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="is-object-component" class="section-block">
-                                    <h3 class="block-title">capivara.isObject</h3>
-                                    <p>Determina se uma referência é um objeto, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let pessoa = { nome: 'Maria' };
+                            <div id="is-object-component" class="section-block">
+                                <h3 class="block-title">capivara.isObject</h3>
+                                <p>Determina se uma referência é um objeto, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let pessoa = { nome: 'Maria' };
 let resultado = capivara.isObject(pessoa);
 
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="is-date-component" class="section-block">
-                                    <h3 class="block-title">capivara.isDate</h3>
-                                    <p>Determina se uma referência é uma data, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let pessoa = {
+                            <div id="is-date-component" class="section-block">
+                                <h3 class="block-title">capivara.isDate</h3>
+                                <p>Determina se uma referência é uma data, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let pessoa = {
     nome: 'Maria',
     aniversario: new Date('1996-11-13T23:00:00Z')
 };
 let resultado = capivara.isDate(pessoa.aniversario);
 
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="is-element-component" class="section-block">
-                                    <h3 class="block-title">capivara.isElement</h3>
-                                    <p>Determina se uma referência é um NodeElement, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let resultado = capivara.isElement(document.body);
+                            <div id="is-element-component" class="section-block">
+                                <h3 class="block-title">capivara.isElement</h3>
+                                <p>Determina se uma referência é um NodeElement, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let resultado = capivara.isElement(document.body);
         
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="is-function-component" class="section-block">
-                                    <h3 class="block-title">capivara.isFunction</h3>
-                                    <p>Determina se uma referência é uma função, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let minhaFuncao = function(){
+                            <div id="is-function-component" class="section-block">
+                                <h3 class="block-title">capivara.isFunction</h3>
+                                <p>Determina se uma referência é uma função, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let minhaFuncao = function(){
     //code
 };
 let resultado = capivara.isFunction(minhaFuncao);
 
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="is-number-component" class="section-block">
-                                    <h3 class="block-title">capivara.isNumber</h3>
-                                    <p>Determina se uma referência é um número, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let notaDoCapivara = 10;
+                            <div id="is-number-component" class="section-block">
+                                <h3 class="block-title">capivara.isNumber</h3>
+                                <p>Determina se uma referência é um número, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let notaDoCapivara = 10;
 let resultado = capivara.isNumber(notaDoCapivara);
 
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="is-string-component" class="section-block">
-                                    <h3 class="block-title">capivara.isString</h3>
-                                    <p>Determina se uma referência é uma string, informe o valor a ser verificado por parâmetro.
-                                        Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let nome = 'CapivaraJS';
+                            <div id="is-string-component" class="section-block">
+                                <h3 class="block-title">capivara.isString</h3>
+                                <p>Determina se uma referência é uma string, informe o valor a ser verificado por parâmetro.
+                                    Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let nome = 'CapivaraJS';
 let resultado = capivara.isString(nome);
 
 console.log(resultado); // O resultado deve ser TRUE.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="merge-component" class="section-block">
-                                    <h3 class="block-title">capivara.merge</h3>
-                                    <p>Faça a mesclagem de objetos em um único objeto. Informe os parâmetros que serão mesclados
-                                        como no exemplo abaixo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let obj1 = {
+                            <div id="merge-component" class="section-block">
+                                <h3 class="block-title">capivara.merge</h3>
+                                <p>Faça a mesclagem de objetos em um único objeto. Informe os parâmetros que serão mesclados
+                                    como no exemplo abaixo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let obj1 = {
     nome: 'Maria'
 };
 let obj2 = {
@@ -162,229 +162,245 @@ let obj2 = {
 let resultado = capivara.merge(obj1, obj2);
 
 console.log(resultado); // O resultado deve ser {nome: "Maria", idade: 25}.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="copy-component" class="section-block">
-                                    <h3 class="block-title">capivara.copy</h3>
-                                    <p>Você pode fazer a cópia de um objeto para que seja criado uma nova referência. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let obj = {
+                            <div id="copy-component" class="section-block">
+                                <h3 class="block-title">capivara.copy</h3>
+                                <p>Você pode fazer a cópia de um objeto para que seja criado uma nova referência. Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let obj = {
     nome: 'Maria'
 };
 let resultado = capivara.copy(obj);
 
 console.log(resultado);
 // O resultado deve ser um objeto idêntico, entretanto com outra referência: {nome: 'Maria'}.</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="replace-all-component" class="section-block">
-                                    <h3 class="block-title">capivara.replaceAll</h3>
-                                    <p>Você pode fazer o replace em uma String de todas as ocorrências encontradas. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let str = 'Eu amo capivara. Capivara é demais.';
+                            <div id="replace-all-component" class="section-block">
+                                <h3 class="block-title">capivara.replaceAll</h3>
+                                <p>Você pode fazer o replace em uma String de todas as ocorrências encontradas. Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">let str = 'Eu amo capivara. Capivara é demais.';
 let resultado = capivara.replaceAll(str, 'capivara', 'CapivaraJS');
 
 console.log(resultado);
 // O resultado deve ser: Eu amo CapivaraJS. Capivara é demais.</code></pre>
-                                </div>
-                            </section>
-                            <!--//doc-section-->
+                            </div>
+                        </section>
+                        <!--//doc-section-->
 
-                            <section id="events-capivara" class="doc-section">
-                                <h2 class="section-title">Eventos</h2>
-                                <p>
-                                    É possível escutar e emitir eventos. O CapivaraJS possui as funções
-                                    <b>$on</b> e
-                                    <b>$emit</b> que são responsáveis pelas respectivas ações.
+                        <section id="events-capivara" class="doc-section">
+                            <h2 class="section-title">Eventos</h2>
+                            <p>
+                                É possível escutar e emitir eventos. O CapivaraJS possui as funções
+                                <b>$on</b> e
+                                <b>$emit</b> que são responsáveis pelas respectivas ações.
+                            </p>
+
+                            <div id="event-on-component" class="section-block">
+                                <h3 class="block-title">capivara.$on</h3>
+                                <p>Para começar a escutar um evento, basta informar seu nome e uma função para ser executada
+                                    quando seu evento for emitido.
                                 </p>
-
-                                <div id="event-on-component" class="section-block">
-                                    <h3 class="block-title">capivara.$on</h3>
-                                    <p>Para começar a escutar um evento, basta informar seu nome e uma função para ser executada
-                                        quando seu evento for emitido.
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.$on('meuEvento', function(){
+                                <pre><span class="pre-type"></span><code class="language-javascript">capivara.$on('meuEvento', function(){
     console.log('Uhaau! Meu evento foi executado');
 });</code></pre>
-                                </div>
+                            </div>
 
-                                <div id="event-emit-component" class="section-block">
-                                    <h3 class="block-title">capivara.$emit</h3>
-                                    <p>A função
-                                        <b>$emit</b> faz com que todos os ouvintes do seu evento seja executado. Exemplo:
-                                    </p>
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.$emit('meuEvento');</code></pre>
-                                    <br> Você pode enviar vários parâmetros no seu evento, para isso basta informa-los ao emitir
-                                    um evento, logo após do seu nome.
-                                    <pre><span class="pre-type"></span><code class="language-javascript">let meuParametro = 'CapivaraJS';
+                            <div id="event-emit-component" class="section-block">
+                                <h3 class="block-title">capivara.$emit</h3>
+                                <p>A função
+                                    <b>$emit</b> faz com que todos os ouvintes do seu evento seja executado. Exemplo:
+                                </p>
+                                <pre><span class="pre-type"></span><code class="language-javascript">capivara.$emit('meuEvento');</code></pre>
+                                <br> Você pode enviar vários parâmetros no seu evento, para isso basta informa-los ao emitir
+                                um evento, logo após do seu nome.
+                                <pre><span class="pre-type"></span><code class="language-javascript">let meuParametro = 'CapivaraJS';
 capivara.$emit('meuEvento', meuParametro);</code></pre>
-                                    <br> Para receber os parâmetros enviados pela função
-                                    <b>$emit</b> é feito da seguinte forma.
-                                    <pre><span class="pre-type"></span><code class="language-javascript">capivara.$on('meuEvento', function(meuParametro){
+                                <br> Para receber os parâmetros enviados pela função
+                                <b>$emit</b> é feito da seguinte forma.
+                                <pre><span class="pre-type"></span><code class="language-javascript">capivara.$on('meuEvento', function(meuParametro){
     console.log(meuParametro)
 });</code></pre>
-                                </div>
-                            </section>
-                            <!-- //doc-section -->
+                            </div>
+                        </section>
+                        <!-- //doc-section -->
 
-                            <section id="directives-capivara" class="doc-section">
-                                <h2 class="section-title">Diretivas</h2>
-                                <div id="cp-blur-component" class="section-block">
-                                    <h3 class="block-title">cp-blur</h3>
-                                    <p>
-                                        O cp-blur é uma diretiva destinada a executar funções quando um determinado input for desselecionado. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/11/embed/"></script></pre>
-                                </div>
-                                <div id="cp-class-component" class="section-block">
-                                    <h3 class="block-title">cp-class</h3>
-                                    <p>
-                                        Com a diretiva cp-class você pode modificar dinâmicamente as classes dentro do seu componente. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/9/embed/"></script></pre>
-                                </div>
-                                <div id="cp-click-component" class="section-block">
-                                    <h3 class="block-title">cp-click</h3>
-                                    <p>
-                                        Você pode executar uma função do seu escopo. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/12/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-disabled-component" class="section-block">
-                                    <h3 class="block-title">cp-disabled</h3>
-                                    <p>
-                                        Com essa diretiva você pode ativar e desativar elementos de acordo com condições ou valores diretos. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/13/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-if-component" class="section-block">
-                                    <h3 class="block-title">cp-if</h3>
-                                    <p>
-                                        O cp-if te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do cp-show os elementos são removidos
-                                        do documento e contruidos dinamicamente. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/17/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-else-if-component" class="section-block">
-                                    <h3 class="block-title">cp-else-if</h3>
-                                    <p>
-                                        O cp-else-if deve ser utilizado logo após a diretiva cp-if e outras diretivas cp-else-if, ela é visível quando o cp-if retornar
-                                        falso e a condição da diretiva cp-else-if retorna verdadeiro. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/19/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-else-component" class="section-block">
-                                    <h3 class="block-title">cp-else</h3>
-                                    <p>
-                                        O cp-else deve ser utilizado logo após a diretiva cp-if, ela é visível quando o cp-if retornar falso em sua condição. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/20/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-focus-component" class="section-block">
-                                    <h3 class="block-title">cp-focus</h3>
-                                    <p>
-                                        O cp-focus é uma diretiva destinada a executar funções quando um determinado input for selecionado. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/23/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-hide-component" class="section-block">
-                                    <h3 class="block-title">cp-hide</h3>
-                                    <p>
-                                        O cp-hide faz com que o elemento que carregue a diretiva possa ser ocultado ou não, dependendo de uma valor booleano de controle.  Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/25/embed/"></script></pre>
-                                </div>
-                                <div id="cp-init-component" class="section-block">
-                                    <h3 class="block-title">cp-init</h3>
-                                    <p>
-                                        O cp-init permite a execução de uma função quando um determinado elemento for renderizado. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/27/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-key-component" class="section-block">
-                                    <h3 class="block-title">cp-key</h3>
-                                    <p>
-                                        O cp-key dispara o evento quando uma determinada
-                                        tecla for precionada, a diretiva suporta múltiplas teclas, e o nome da diretiva muda com a função
-                                        que ela está exercendo, como podemos observar no exemplo abaixo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/32/embed/"></script></pre>
-                                </div>
-                                <div id="cp-max-component" class="section-block">
-                                    <h3 class="block-title">cp-max</h3>
-                                    <p>
-                                       A diretiva cp-max serve para determinar o máximo quem um componente pode alcançar,
-                                       mas nesse caso não determina o tamanho de uma entrada de texto, e sim em casos de
-                                       input do tipo range ou number. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/35/embed/"></script></pre>
-                                </div>
-                                <div id="cp-maxlength-component" class="section-block">
-                                    <h3 class="block-title">cp-maxlength</h3>
-                                    <p>
-                                        A diretiva cp-maxlength determinar o tamanho máximo de uma entrada, essa diretiva
-                                        funciona com input do tipo text. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/36/embed/"></script></pre>
-                                </div>
-                                <div id="cp-min-component" class="section-block">
-                                    <h3 class="block-title">cp-min</h3>
-                                    <p>
-                                        Complementar a diretiva cp-max o cp-min determina qual é o menor valor que um input
-                                        do tipo range ou number pode ter. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/37/embed/"></script></pre>
-                                </div>
-                                <div id="cp-model-component" class="section-block">
-                                    <h3 class="block-title">cp-model</h3>
-                                    <p>
-                                        Essa diretiva possibilita a interação do seu escopo com as input, quando usamos cp-model toda modificação de uma input é
-                                        aplicada no escopo. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/39/embed/"></script></pre>
-                                </div>
-                                <div id="cp-repeat-component" class="section-block">
-                                    <h3 class="block-title">cp-repeat</h3>
-                                    <p>
-                                        O cp-repeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/42/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-show-component" class="section-block">
-                                    <h3 class="block-title">cp-show</h3>
-                                    <p>
-                                        O cp-show te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/43/embed/"></script></pre>
-                                </div>
-                                <div id="cp-src-component" class="section-block">
-                                    <h3 class="block-title">cp-src</h3>
-                                    <p>
-                                        Utilizando cp-src você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/45/embed/js,html,result/"></script></pre>
-                                </div>
-                                <div id="cp-step-component" class="section-block">
-                                    <h3 class="block-title">cp-step</h3>
-                                    <p>
-                                        A diretiva cp-step faz com que o intervalo de avanço de um input do tipo number ou range
-                                        seja atribuído ao valor que o cp-step possui. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/47/embed/"></script></pre>
-                                </div>
-                                <div id="cp-style-component" class="section-block">
-                                    <h3 class="block-title">cp-style</h3>
-                                    <p>
-                                        Com o cp-style você pode modificar os style do seu componente dinâmicamente, através de outras diretivas como cp-click, inputs
-                                        ou variáveis. Exemplo:
-                                    </p>
-                                    <pre><script async src="//jsfiddle.net/td4v7qqd/48/embed/"></script></pre>
-                                </div>
+                        <section id="directives-capivara" class="doc-section">
+                            <h2 class="section-title">Diretivas</h2>
+                            <div id="cp-blur-component" class="section-block">
+                                <h3 class="block-title">cp-blur</h3>
+                                <p>
+                                    O cp-blur é uma diretiva destinada a executar funções quando um determinado input for desselecionado. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/11/embed/"></script></pre>
+                            </div>
+                            <div id="cp-class-component" class="section-block">
+                                <h3 class="block-title">cp-class</h3>
+                                <p>
+                                    Com a diretiva cp-class você pode modificar dinâmicamente as classes dentro do seu componente. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/9/embed/"></script></pre>
+                            </div>
+                            <div id="cp-click-component" class="section-block">
+                                <h3 class="block-title">cp-click</h3>
+                                <p>
+                                    Você pode executar uma função do seu escopo. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/12/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-disabled-component" class="section-block">
+                                <h3 class="block-title">cp-disabled</h3>
+                                <p>
+                                    Com essa diretiva você pode ativar e desativar elementos de acordo com condições ou valores diretos. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/13/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-if-component" class="section-block">
+                                <h3 class="block-title">cp-if</h3>
+                                <p>
+                                    O cp-if te possibilita mostrar ou ocultar elementos de acordo com uma condição, diferente do cp-show os elementos são removidos
+                                    do documento e contruidos dinamicamente. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/17/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-else-if-component" class="section-block">
+                                <h3 class="block-title">cp-else-if</h3>
+                                <p>
+                                    O cp-else-if deve ser utilizado logo após a diretiva cp-if e outras diretivas cp-else-if, ela é visível quando o cp-if retornar
+                                    falso e a condição da diretiva cp-else-if retorna verdadeiro. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/19/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-else-component" class="section-block">
+                                <h3 class="block-title">cp-else</h3>
+                                <p>
+                                    O cp-else deve ser utilizado logo após a diretiva cp-if, ela é visível quando o cp-if retornar falso em sua condição. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/20/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-focus-component" class="section-block">
+                                <h3 class="block-title">cp-focus</h3>
+                                <p>
+                                    O cp-focus é uma diretiva destinada a executar funções quando um determinado input for selecionado. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/23/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-hide-component" class="section-block">
+                                <h3 class="block-title">cp-hide</h3>
+                                <p>
+                                    O cp-hide faz com que o elemento que carregue a diretiva possa ser ocultado ou não, dependendo de uma valor booleano de controle.  Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/25/embed/"></script></pre>
+                            </div>
+                            <div id="cp-init-component" class="section-block">
+                                <h3 class="block-title">cp-init</h3>
+                                <p>
+                                    O cp-init permite a execução de uma função quando um determinado elemento for renderizado. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/27/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-key-component" class="section-block">
+                                <h3 class="block-title">cp-key</h3>
+                                <p>
+                                    O cp-key dispara o evento quando uma determinada
+                                    tecla for precionada, a diretiva suporta múltiplas teclas, e o nome da diretiva muda com a função
+                                    que ela está exercendo, como podemos observar no exemplo abaixo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/32/embed/"></script></pre>
+                            </div>
+                            <div id="cp-max-component" class="section-block">
+                                <h3 class="block-title">cp-max</h3>
+                                <p>
+                                    A diretiva cp-max serve para determinar o máximo quem um componente pode alcançar,
+                                    mas nesse caso não determina o tamanho de uma entrada de texto, e sim em casos de
+                                    input do tipo range ou number. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/35/embed/"></script></pre>
+                            </div>
+                            <div id="cp-maxlength-component" class="section-block">
+                                <h3 class="block-title">cp-maxlength</h3>
+                                <p>
+                                    A diretiva cp-maxlength determinar o tamanho máximo de uma entrada, essa diretiva
+                                    funciona com input do tipo text. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/36/embed/"></script></pre>
+                            </div>
+                            <div id="cp-min-component" class="section-block">
+                                <h3 class="block-title">cp-min</h3>
+                                <p>
+                                    Complementar a diretiva cp-max o cp-min determina qual é o menor valor que um input
+                                    do tipo range ou number pode ter. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/37/embed/"></script></pre>
+                            </div>
+                            <div id="cp-model-component" class="section-block">
+                                <h3 class="block-title">cp-model</h3>
+                                <p>
+                                    Essa diretiva possibilita a interação do seu escopo com as input, quando usamos cp-model toda modificação de uma input é
+                                    aplicada no escopo. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/39/embed/"></script></pre>
+                            </div>
+                            <div id="cp-place-holder-component" class="section-block">
+                                <h3 class="block-title">cp-placeholder</h3>
+                                <p>
+                                    A diretiva cp-placeholder consegue definir de forma dinâmica quais são os textos apresentados dentro de cada input, através
+                                    de variáveis, ou funções. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/jcanabarro/vka8as0b/2/embed/"></script></pre>
+                            </div>
+                            <div id="cp-repeat-component" class="section-block">
+                                <h3 class="block-title">cp-repeat</h3>
+                                <p>
+                                    O cp-repeat te possibilita duplicar elementos html de acordo com um array do seu escopo. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/42/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-show-component" class="section-block">
+                                <h3 class="block-title">cp-show</h3>
+                                <p>
+                                    O cp-show te possibilita mostrar ou ocultar elementos de acordo com uma condição. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/43/embed/"></script></pre>
+                            </div>
+                            <div id="cp-src-component" class="section-block">
+                                <h3 class="block-title">cp-src</h3>
+                                <p>
+                                    Utilizando cp-src você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/45/embed/js,html,result/"></script></pre>
+                            </div>
+                            <div id="cp-step-component" class="section-block">
+                                <h3 class="block-title">cp-step</h3>
+                                <p>
+                                    A diretiva cp-step faz com que o intervalo de avanço de um input do tipo number ou range
+                                    seja atribuído ao valor que o cp-step possui. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/47/embed/"></script></pre>
+                            </div>
+                            <div id="cp-style-component" class="section-block">
+                                <h3 class="block-title">cp-style</h3>
+                                <p>
+                                    Com o cp-style você pode modificar os style do seu componente dinâmicamente, através de outras diretivas como cp-click, inputs
+                                    ou variáveis. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/td4v7qqd/48/embed/"></script></pre>
+                            </div>
+                            <div id="cp-title-component" class="section-block">
+                                <h3 class="block-title">cp-title</h3>
+                                <p>
+                                    Com o cp-title você pode modificar o título do seu componente de forma dinâmica, utilizando outras diretivas como cp-click, inputs
+                                    ou variáveis. Exemplo:
+                                </p>
+                                <pre><script async src="//jsfiddle.net/jcanabarro/ynxb6pbq/4/embed/"></script></pre>
+                            </div>
                         </section>
                         <!--//doc-section-->
                     </div>
                     <!--//content-inner-->
-                    
+
                 </div>
                 <div class="doc-sidebar">
                     <nav id="doc-nav">
@@ -486,6 +502,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <a class="scrollto" href="#cp-model-component">cp-model</a>
                                     </li>
                                     <li>
+                                        <a class="scrollto" href="#cp-place-holder-component">cp-placeholder</a>
+                                    </li>
+                                    <li>
                                         <a class="scrollto" href="#cp-repeat-component">cp-repeat</a>
                                     </li>
                                     <li>
@@ -500,7 +519,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     <li>
                                         <a class="scrollto" href="#cp-style-component">cp-style</a>
                                     </li>
-
+                                    <li>
+                                        <a class="scrollto" href="#cp-title-component">cp-title</a>
+                                    </li>
                                 </ul>
                                 <!--//nav-->
                             </li>
@@ -555,30 +576,30 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
     </div>
     <!--//promo-block-->
 
+</div>
+<!--//page-wrapper-->
+
+<footer id="footer" class="footer text-center">
+    <div class="container">
+        <small class="copyright">Desenvolvido
+            <i class="fa fa-heart"></i> por
+            <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a>
+        </small>
+
     </div>
-    <!--//page-wrapper-->
-
-    <footer id="footer" class="footer text-center">
-        <div class="container">
-            <small class="copyright">Desenvolvido
-                <i class="fa fa-heart"></i> por
-                <a href="https://github.com/CapivaraJS/capivarajs" target="_blank">CapivaraJS</a>
-            </small>
-
-        </div>
-        <!--//container-->
-    </footer>
-    <!--//footer-->
+    <!--//container-->
+</footer>
+<!--//footer-->
 
 
-    <!-- Main Javascript -->
-    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
-    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+<!-- Main Javascript -->
+<script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/prism/prism.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 
 </body>
 
