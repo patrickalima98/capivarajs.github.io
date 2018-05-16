@@ -229,6 +229,25 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
 
                         <section id="directives-capivara" class="doc-section">
                             <h2 class="section-title">Diretivas</h2>
+                            <div id="cp-attr-component" class="section-block">
+                                <h3 class="block-title">cp-attr</h3>
+                                <div>
+                                    O cp-attr é uma diretiva diferente das outras que serão demonstradas a seguir, ela não executa um comando
+                                    expecífico, elas é determinada pelo seu atributo, segue uma pequena listas de algumas ações que a diretiva
+                                    consegue executar.
+                                    <ul>
+                                        <li>cp-attr.max</li>
+                                        <li>cp-attr.min</li>
+                                        <li>cp-attr.maxlength</li>
+                                        <li>cp-attr.placeholder</li>
+                                        <li>cp-attr.step</li>
+                                        <li>cp-attr.src</li>
+                                        <li>cp-attr.title</li>
+                                    </ul>
+                                    O exemplo a seguir mostra uma das ações descritas na lista acima:
+                                </div>
+                                <script async src="//jsfiddle.net/td4v7qqd/72/embed/"></script>
+                            </div>
                             <div id="cp-blur-component" class="section-block">
                                 <h3 class="block-title">cp-blur</h3>
                                 <p>
@@ -318,31 +337,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 </p>
                                 <pre><script async src="//jsfiddle.net/td4v7qqd/32/embed/"></script></pre>
                             </div>
-                            <div id="cp-max-component" class="section-block">
-                                <h3 class="block-title">cp-max</h3>
-                                <p>
-                                    A diretiva cp-max serve para determinar o máximo quem um componente pode alcançar,
-                                    mas nesse caso não determina o tamanho de uma entrada de texto, e sim em casos de
-                                    input do tipo range ou number. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/td4v7qqd/35/embed/"></script></pre>
-                            </div>
-                            <div id="cp-maxlength-component" class="section-block">
-                                <h3 class="block-title">cp-maxlength</h3>
-                                <p>
-                                    A diretiva cp-maxlength determinar o tamanho máximo de uma entrada, essa diretiva
-                                    funciona com input do tipo text. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/td4v7qqd/36/embed/"></script></pre>
-                            </div>
-                            <div id="cp-min-component" class="section-block">
-                                <h3 class="block-title">cp-min</h3>
-                                <p>
-                                    Complementar a diretiva cp-max o cp-min determina qual é o menor valor que um input
-                                    do tipo range ou number pode ter. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/td4v7qqd/37/embed/"></script></pre>
-                            </div>
                             <div id="cp-model-component" class="section-block">
                                 <h3 class="block-title">cp-model</h3>
                                 <p>
@@ -353,29 +347,21 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                             </div>
                             <div id="cp-mouse-component" class="section-block">
                                 <h3 class="block-title">cp-mouse</h3>
-                                <p>
+                                <div>
                                     Com a diretiva cp-mouse você pode utilizar todas as funções que existem para disparar eventos utilizando o mouse,
                                     sendo elas:
                                     <ul>
-                                        <li>cp-mouseover</li>
-                                        <li>cp-mousein</li>
-                                        <li>cp-mouseout</li>
-                                        <li>cp-mousedown</li>
-                                        <li>cp-mouseup</li>
-                                        <li>cp-mousemove</li>
-
+                                        <li>mouseover</li>
+                                        <li>mouseout</li>
+                                        <li>mousedown</li>
+                                        <li>mouseup</li>
+                                        <li>mousemove</li>
+                                        <li>mouseleave</li>
+                                        <li>mouseenter</li>
                                     </ul>
                                 Exemplo:
-                                </p>
+                                </div>
                                 <pre><script async src="//jsfiddle.net/jcanabarro/w1tsmcry/2/embed/"></script></pre>
-                            </div>
-                            <div id="cp-place-holder-component" class="section-block">
-                                <h3 class="block-title">cp-placeholder</h3>
-                                <p>
-                                    A diretiva cp-placeholder consegue definir de forma dinâmica quais são os textos apresentados dentro de cada input, através
-                                    de variáveis, ou funções. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/jcanabarro/vka8as0b/2/embed/"></script></pre>
                             </div>
                             <div id="cp-repeat-component" class="section-block">
                                 <h3 class="block-title">cp-repeat</h3>
@@ -391,21 +377,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 </p>
                                 <pre><script async src="//jsfiddle.net/td4v7qqd/43/embed/"></script></pre>
                             </div>
-                            <div id="cp-src-component" class="section-block">
-                                <h3 class="block-title">cp-src</h3>
-                                <p>
-                                    Utilizando cp-src você pode adicionar ou remover dinâmicamente a utilização do src dentro do seu código. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/td4v7qqd/45/embed/js,html,result/"></script></pre>
-                            </div>
-                            <div id="cp-step-component" class="section-block">
-                                <h3 class="block-title">cp-step</h3>
-                                <p>
-                                    A diretiva cp-step faz com que o intervalo de avanço de um input do tipo number ou range
-                                    seja atribuído ao valor que o cp-step possui. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/td4v7qqd/47/embed/"></script></pre>
-                            </div>
                             <div id="cp-style-component" class="section-block">
                                 <h3 class="block-title">cp-style</h3>
                                 <p>
@@ -413,14 +384,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                     ou variáveis. Exemplo:
                                 </p>
                                 <pre><script async src="//jsfiddle.net/td4v7qqd/48/embed/"></script></pre>
-                            </div>
-                            <div id="cp-title-component" class="section-block">
-                                <h3 class="block-title">cp-title</h3>
-                                <p>
-                                    Com o cp-title você pode modificar o título do seu componente de forma dinâmica, utilizando outras diretivas como cp-click, inputs
-                                    ou variáveis. Exemplo:
-                                </p>
-                                <pre><script async src="//jsfiddle.net/jcanabarro/ynxb6pbq/4/embed/"></script></pre>
                             </div>
                         </section>
                         <!--//doc-section-->
@@ -483,6 +446,9 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                 <a class="scrollto" href="#directives-capivara">Diretivas</a>
                                 <ul class="nav doc-sub-menu">
                                     <li>
+                                        <a class="scrollto" href="#cp-attr-component">cp-attr</a>
+                                    </li>
+                                    <li>
                                         <a class="scrollto" href="#cp-blur-component">cp-blur</a>
                                     </li>
                                     <li>
@@ -519,22 +485,10 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <a class="scrollto" href="#cp-key-component">cp-key</a>
                                     </li>
                                     <li>
-                                        <a class="scrollto" href="#cp-max-component">cp-max</a>
-                                    </li>
-                                    <li>
-                                        <a class="scrollto" href="#cp-maxlength-component">cp-maxlength</a>
-                                    </li>
-                                    <li>
-                                        <a class="scrollto" href="#cp-min-component">cp-min</a>
-                                    </li>
-                                    <li>
                                         <a class="scrollto" href="#cp-model-component">cp-model</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-mouse-component">cp-mouse</a>
-                                    </li>
-                                    <li>
-                                        <a class="scrollto" href="#cp-place-holder-component">cp-placeholder</a>
                                     </li>
                                     <li>
                                         <a class="scrollto" href="#cp-repeat-component">cp-repeat</a>
@@ -543,16 +497,7 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
                                         <a class="scrollto" href="#cp-show-component">cp-show</a>
                                     </li>
                                     <li>
-                                        <a class="scrollto" href="#cp-src-component">cp-src</a>
-                                    </li>
-                                    <li>
-                                        <a class="scrollto" href="#cp-step-component">cp-step</a>
-                                    </li>
-                                    <li>
                                         <a class="scrollto" href="#cp-style-component">cp-style</a>
-                                    </li>
-                                    <li>
-                                        <a class="scrollto" href="#cp-title-component">cp-title</a>
                                     </li>
                                 </ul>
                                 <!--//nav-->
@@ -607,7 +552,6 @@ capivara.$emit('meuEvento', meuParametro);</code></pre>
         <!--//container-->
     </div>
     <!--//promo-block-->
-
 </div>
 <!--//page-wrapper-->
 
