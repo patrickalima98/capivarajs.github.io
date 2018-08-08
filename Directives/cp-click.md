@@ -33,6 +33,7 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/105/)
 
 Exemplo de utilização da mesma função em mais de um elemento
 
@@ -56,3 +57,4 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/54/)

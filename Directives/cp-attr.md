@@ -47,6 +47,7 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/77/)
 
 Exemplo de utilização do atributo `placeholder`
 
@@ -64,6 +65,7 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/76/)
 
 Exemplo de utilização do atributo `title`
 
@@ -76,9 +78,10 @@ class simpleComponent {
 
 capivara.component('simple-component', {
   template: `
-    <p><abbr title="$ctrl.WHO">WHO</abbr> was founded in 1948.</p>
+    <p><abbr cp-attr.title="$ctrl.WHO">WHO</abbr> was founded in 1948.</p>
   `,
   controller: simpleComponent
 });
 ```
 
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/50/)

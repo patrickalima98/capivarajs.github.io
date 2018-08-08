@@ -27,8 +27,9 @@ class simpleComponent {
 capivara.component('simple-component', {
   template: `
     <p>Type <b>red<b> to hide the div</p>
-	<input type="text" cp-model="$ctrl.color">
-	<div cp-hide="$ctrl.color == 'red'"></div>`,
+		<input type="text" cp-model="$ctrl.color">
+		<div cp-hide="$ctrl.color == 'red'"> Hi </div>`,
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/69/)
