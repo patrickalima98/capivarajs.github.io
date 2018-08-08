@@ -34,6 +34,7 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/85/)
 
 Exemplo de utilização em um elemento `<button>` com operação lógica.
 
@@ -56,3 +57,4 @@ capivara.component('simple-component', {
 });
 ```
 
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/58/)

@@ -32,10 +32,11 @@ capivara.component('simple-component', {
   template: `
    <ul>
      <li cp-repeat="person in $ctrl.persons">
-      [[persons.name]]
+      [[person.name]]
      </li>
    </ul>
   `,
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/100/)

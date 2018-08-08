@@ -33,6 +33,7 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/84/)
 
 Exemplo de utilização com condicionais
 
@@ -52,6 +53,7 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/83/)
 
 Exemplo de utilização com condicionais e operações aritméticas
 
@@ -71,3 +73,4 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/78/)

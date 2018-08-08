@@ -35,7 +35,7 @@ A diretiva tem suporte a múltiplas teclas, basta apenas continuar a concatenaç
 Exemplo de utilização da diretiva `cp-keypress` e `key-up`.
 
 ```js
-class MyComponent {
+class simpleComponent {
   onPressEnter(evt) {
     alert('onPressEnter.');
   }
@@ -44,11 +44,12 @@ class MyComponent {
   }
 }
 
-capivara.component('my-component', {
+capivara.component('simple-component', {
   template: `
    <input cp-keypress.enter="$ctrl.onPressEnter($event)" placeholder="Press Enter">
    <input cp-keyup.u="$ctrl.onUp($event)" placeholder="Press and Release U">
 `,
-  controller: MyComponent
+  controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/98/)

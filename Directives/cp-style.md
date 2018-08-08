@@ -26,11 +26,12 @@ class simpleComponent {
 
 capivara.component('simple-component', {
   template: `
-   <p cp-style="{background: $ctrl.blue}">Example</p>
+   <p cp-style="{background: $ctrl.color}">Example</p>
   `,
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/110/)
 
 Exemplo de utilização com comparação.
 
@@ -51,3 +52,4 @@ capivara.component('simple-component', {
   controller: simpleComponent
 });
 ```
+Se quiser dar uma olhada, esse exemplo está no [JSFiddle](https://jsfiddle.net/zf8gqh0d/74/)
