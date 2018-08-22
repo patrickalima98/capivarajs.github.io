@@ -14,11 +14,7 @@
 </p>
 
 <h2 id="docsify">
-  <a href="#/?id=docsify" data-id="docsify" class="anchor">
-    <span>
-      CapivaraJS
-    </span>
-  </a>
+  CapivaraJS
 </h2>
 <blockquote>
   <p>Um compilador para Web Components.</p>
