@@ -30,4 +30,4 @@ Se estiver utilizando Webpack para importar o CapivaraJS o comando é o seguinte
  import capivara from 'capivarajs';
 ```
 
-!> Caso você queira ver exemplos do CapivaraJS clique [aqui](/GettingStarted/first-example), no entanto, se você quer aprender a criar novos componentes utilizando CapivaraJS clique [aqui](/GettingStarted/Components).
+Caso você queira ver exemplos do CapivaraJS clique [aqui](/GettingStarted/first-example), no entanto, se você quer aprender a criar novos componentes utilizando CapivaraJS clique [aqui](/GettingStarted/Components).
