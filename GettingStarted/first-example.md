@@ -39,8 +39,7 @@ acima.
 
 ## Utilizando Variáveis
 
-Claro que o código da seção anterior não faz absolutamente nada de legal, mas podemos com certeza
-melhorar ele, vamos criar variáveis para serem exibidas na página web ao invés de apenas utilizar textos estáticos.
+Claro que o código da seção anterior não faz absolutamente nada de legal, mas com certeza podemos melhora-lo, vamos criar variáveis para serem exibidas na página web ao invés de apenas utilizar textos estáticos.
 
 
 ```js
@@ -91,11 +90,11 @@ capivara.component('simple-component', {
 ```
 O que podemos observar com este exemplo:
 
-* `cp-if` e `cp-else`: São condicionais como em qualquer linguagem de programação que exite, através dessas diretivas podemos criar formas dinâmicas de apresentar código HTML.
+* `cp-if` e `cp-else`: São condicionais como em qualquer linguagem de programação, através dessas diretivas podemos criar formas dinâmicas de apresentar código HTML.
 * `cp-click`: Sempre utilizado quando se quer disparar eventos utilizando mouse.
 * `$ctrl.Visibility()`: Tome cuidado quando for utilizar funções em diretivas, se elas não possuírem `()` o CapivaraJS entenderá como uma variável.
 
 
 !> Vale lembrar que o código HTML fica exatamente o mesmo do exemplo anterior.
 
-Esperamos que isso tenta te dado uma pequena ideia de como o **CapivaraJS** funciona, e se você chegou até aqui, espero que tenha gostado. Nós ficamos muito felizes com isso.
+Esperamos que isso tenha dado uma pequena ideia de como o **CapivaraJS** funciona, e se você chegou até aqui, espero que tenha gostado. Nós ficamos muito felizes com isso.
