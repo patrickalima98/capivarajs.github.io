@@ -31,9 +31,9 @@ Atualmente existem vários frameworks que possibilitam a criação de componente
 - [Github](https://github.com/CapivaraJS/capivarajs)
 - [Fórum da Comunidade](https://gitter.im/capivarajs/Lobby)
 
-## Comece Agora
+## Comece agora
 
-Acesse nosso [tutorial](GettingStarted/quickstart) e aprenda super rápido a utilizar o CapivaraJS.
+Acesse nosso [tutorial](GettingStarted/quickstart) e aprenda super-rápido a utilizar o CapivaraJS.
 
 ## Seja um Contribuidor do CapivaraJS
 
@@ -44,6 +44,6 @@ Acesse nosso [tutorial](GettingStarted/quickstart) e aprenda super rápido a uti
 - Submeta o pull request
 
 <p style="color: gray;">
-Toda a documentação foi baseada no template disponibiliado 
+Toda a documentação foi baseada no template disponibilizada 
 pela <a href="https://docsify.js.org" target="_blank">docsify</a>
 </p>
