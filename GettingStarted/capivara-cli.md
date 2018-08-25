@@ -1,8 +1,7 @@
 # Capivara CLI
 
 O CapivaraJS também fornece um [CLI](https://www.npmjs.com/package/capivara-cli) oficial para agilizar a criação de componentes, sem perder
-tempo com configurações de cada componente que precisa ser criado. A criação da estrutura básica
-dos componentes levam apenas alguns minutos para ficar pronto. 
+tempo com configurações de cada componente que precisa ser criado. A criação da estrutura básica dos componentes leva apenas alguns minutos para ficar pronto. 
 
 ## NPM
 
