@@ -24,12 +24,12 @@
 ## Introdução
 Atualmente existem vários frameworks que possibilitam a criação de componentes, entretanto tais componentes acabam ficando isolados em determinada tecnologia, fazendo com que uma possível migração seja mais complexa.<br> O **CapivaraJS** é um framework híbrido e suas diretivas são totalmente personalizáveis, tornando assim os componentes independentes da tecnologia utilizada.
 
-## Links Úteis
+## Links úteis
 
 - [CLI](https://github.com/CapivaraJS/capivara-cli)
 - CDN: [UNPKG](http://unpkg.com/capivarajs@latest/dist/capivara.min.js)
-- [Github](https://github.com/CapivaraJS/capivarajs)
-- [Fórum da Comunidade](https://gitter.im/capivarajs/Lobby)
+- [GitHub](https://github.com/CapivaraJS/capivarajs)
+- [Fórum da comunidade](https://gitter.im/capivarajs/Lobby)
 
 ## Comece agora
 
