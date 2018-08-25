@@ -44,6 +44,6 @@ Acesse nosso [tutorial](GettingStarted/quickstart) e aprenda super-rápido a uti
 - Submeta o pull request
 
 <p style="color: gray;">
-Toda a documentação foi baseada no template disponibilizada 
+!> Toda a documentação foi baseada no template disponibilizada 
 pela <a href="https://docsify.js.org" target="_blank">docsify</a>
 </p>
